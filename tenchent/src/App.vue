@@ -1,18 +1,14 @@
 <template>
-<div>
-  <h1>www</h1>
-  <search></search>
-  <searchSearch></searchSearch>
-</div>
+  <div>
+    <home></home>
+  </div>
 
 </template>
 <script>
-import search from './components/search.vue'
-import searchSearch from './components/searchSearch.vue'
+import home from './views/home.vue'
 export default {
   components: {
-    search,
-    searchSearch
+    home
   }
 }
 </script>
