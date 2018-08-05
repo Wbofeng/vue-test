@@ -33,7 +33,7 @@
   </el-col>
 </el-row>
 <el-row>
-  <el-col :span="18" :offset="3">
+  <el-col :span="21" :offset="2">
     <el-button-group>
       <el-button type="primary" size="small" class="row-unify">财经</el-button>
       <el-button type="primary" size="small" class="row-unify">证券</el-button>
@@ -59,7 +59,7 @@
       <el-button type="primary" size="small" class="row-unify">大家</el-button>
       <el-button type="primary" size="small" class="row-unify">文学</el-button>
       <el-button type="primary" size="small" class="row-unify">拍客</el-button>
-    <el-select v-model="value" placeholder="天气" size="small" class="row-unify2">
+    <el-select v-model="value"  placeholder="天气" size="small" class="row-unify2">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -107,7 +107,8 @@ export default {
       }, {
         value: '选项10',
         label: '全部'
-      }]
+      }],
+      value: '选项1'
     }
   }
 }
@@ -118,6 +119,6 @@ export default {
     width: 55px;
   }
   .row-unify2 {
-    width: 55px;
+    width: 116px;
   }
 </style>

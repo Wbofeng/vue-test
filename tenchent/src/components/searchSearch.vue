@@ -1,8 +1,8 @@
 <template>
 <div style="margin-top: 15px;">
 <el-row>
-  <el-col :span="6" :offset="8">
-  <el-input placeholder="" v-model="input1" class="input-with-select">
+  <el-col :span="7" :offset="8">
+  <el-input placeholder="" v-model="input1" class="input-with-select" size="small">
     <el-select v-model="select" slot="prepend" placeholder="网页" trigger="hover" class=".el-select">
       <el-option label="网页" value="2"></el-option>
       <el-option label="图片" value="3"></el-option>
@@ -10,17 +10,17 @@
       <el-option label="音乐" value="5"></el-option>
       <el-option label="地图" value="6"></el-option>
       <el-option label="问问" value="7"></el-option>
-      <el-option label="问问" value="7"></el-option>
-      <el-option label="问问" value="7"></el-option>
-      <el-option label="问问" value="7"></el-option>
+      <el-option label="百科" value="8"></el-option>
+      <el-option label="新闻" value="9"></el-option>
+      <el-option label="购物" value="10"></el-option>
     </el-select>
     <el-button slot="append">搜索</el-button>
   </el-input>
   </el-col>
-  <el-col :span="6" :offset="4">
+  <el-col :span="6" :offset="2">
     <el-button type="text" icon="el-icon-star-off" plain></el-button>
     <el-button type="text" icon="el-icon-message" plain></el-button>
-    <el-button type="primary" size="medium" plain>登录</el-button>
+    <el-button type="primary" size="small" plain>登录</el-button>
   </el-col>
 </el-row>
 
@@ -47,11 +47,14 @@ export default {
 </script>
 
 <style scoped>
-  .el-select .el-input {
-    width: 80px;
+  .el-select {
+    width: 80px !important;
+    line-height: 0px !important;
   }
-  .input-with-select .el-input-group__prepend {
+  .input-with-select {
     background-color: #fff;
+    width: 400px;
+    line-height: 0px !important;
   }
 
 </style>

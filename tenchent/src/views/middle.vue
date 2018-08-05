@@ -1,8 +1,8 @@
 <template>
 <el-container>
-  <el-header>header2</el-header>
+  <el-header><middleHeader></middleHeader></el-header>
   <el-container>
-    <el-aside width="960px">aside2</el-aside>
+    <el-aside width="960px"><middleAside></middleAside></el-aside>
     <el-container>
       <el-main>main2</el-main>
     </el-container>
@@ -11,47 +11,36 @@
 </template>
 
 <script>
+import middleHeader from '../components/middleHeader.vue'
+import middleAside from '../components/middleAside.vue'
 export default {
+  components: {
+    middleHeader,
+    middleAside
+  }
 }
 </script>
 
 <style scoped>
   .el-header {
-    background-color: rgb(209, 113, 247);
+    background-color: rgb(248, 66, 66);
     color: #333;
     text-align: center;
-    line-height: 60px;
-    height: 75px !important;
+    height: 110px !important;
   }
   .el-footer {
     background-color: rgb(84, 128, 224);
     color: #333;
     text-align: center;
-    line-height: 60px;
-    height: 70px !important;
   }
   .el-aside {
-    background-color: #D3DCE6;
+    background-color: rgb(248, 250, 248);
     color: #333;
-    text-align: center;
-    line-height: 200px;
-    height: 970px;
+    height: 227px;
   }
   .el-main {
-    background-color: #E9EEF3;
+    background-color: rgb(155, 94, 94);
     color: #333;
     text-align: center;
-    line-height: 160px;
-    height: 970px;
-  }
-  body > .el-container {
-    margin-bottom: 40px;
-  }
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
   }
 </style>
