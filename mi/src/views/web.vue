@@ -1,8 +1,8 @@
 <template>
   <div class="web" >
     <div class="top" style="position: absolute;top:0px">
-    <a href="https://www.mi.com/a/h/6554.html?client_id=180100041086&masid=17409.0417">
-    <img height="120px" width="1400px" src="../assets//top.jpg"/></a>
+      <a href="https://www.mi.com/a/h/6554.html?client_id=180100041086&masid=17409.0417">
+      <img height="120px" width="1400px" src="../assets//top.jpg"/></a>
     </div>
     <div class="menu" style="position: absolute;top:120px">
       <a>
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style type="text/css">
+<style scoped type="text/css">
 #first {
     color:#303133;
     text-decoration:none;
