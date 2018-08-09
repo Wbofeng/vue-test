@@ -1,65 +1,172 @@
 <template>
-<div>
-  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-  <el-radio-button :label="false">展开</el-radio-button>
-  <el-radio-button :label="true">收起</el-radio-button>
-</el-radio-group>
-<el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-  <el-submenu index="1">
-    <template slot="title">
-      <i class="el-icon-location"></i>
-      <span slot="title">导航一</span>
-    </template>
-    <el-menu-item-group>
-      <span slot="title">分组一</span>
-      <el-menu-item index="1-1">选项1</el-menu-item>
-      <el-menu-item index="1-2">选项2</el-menu-item>
-    </el-menu-item-group>
-    <el-menu-item-group title="分组2">
-      <el-menu-item index="1-3">选项3</el-menu-item>
-    </el-menu-item-group>
-    <el-submenu index="1-4">
-      <span slot="title">选项4</span>
-      <el-menu-item index="1-4-1">选项1</el-menu-item>
-    </el-submenu>
-  </el-submenu>
-  <el-menu-item index="2">
-    <i class="el-icon-menu"></i>
-    <span slot="title">导航二</span>
-  </el-menu-item>
-  <el-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
-    <span slot="title">导航三</span>
-  </el-menu-item>
-  <el-menu-item index="4">
-    <i class="el-icon-setting"></i>
-    <span slot="title">导航四</span>
-  </el-menu-item>
-</el-menu>
+<div class="hold">
+  <el-row class="mainwidth">
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">QQ</a>
+    </div>
+    </el-col>
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">邮箱</a>
+    </div></el-col>
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">会员</a>
+    </div></el-col>
+    <el-col :span="8"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">电脑管家</a>
+    </div></el-col>
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">软件</a>
+    </div></el-col>
+  </el-row>
+  <el-row class="mainwidth">
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">微信</a>
+    </div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">空间</a>
+    </div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">课堂</a>
+    </div></el-col>
+    <el-col :span="6"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">视频VIP</a>
+    </div></el-col>
+    <el-col :span="6"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word1 w1" target="_blank">腾讯云</a>
+    </div></el-col>
+  </el-row>
+  <el-row class="mainwidth">
+    <el-col :span="7"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">新闻APP</a>
+    </div></el-col>
+    <el-col :span="7"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">体育APP</a>
+    </div></el-col>
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">快报</a>
+    </div></el-col>
+    <el-col :span="6"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">企鹅号</a>
+    </div></el-col><br>
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">视频</a>
+    </div></el-col>
+    <el-col :span="8"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">手机管家</a>
+    </div></el-col>
+    <el-col :span="6"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">浏览器</a>
+    </div></el-col>
+    <el-col :span="6"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">应用宝</a>
+    </div></el-col>
+  </el-row>
+  <el-row class="mainwidth">
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">LOL</a>
+    </div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">DNF</a>
+    </div></el-col>
+    <el-col :span="3"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">CF</a>
+    </div></el-col>
+    <el-col :span="6"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">冒险岛</a>
+    </div></el-col>
+    <el-col :span="7"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word1 w1" target="_blank">QQ炫舞</a>
+    </div></el-col><br>
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank"> 爱玩 </a>
+    </div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank"> 逆战 </a>
+    </div></el-col>
+    <el-col :span="5"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank"> 天刀 </a>
+    </div></el-col>
+    <el-col :span="7"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank"> 火影OL </a>
+    </div></el-col>
+    <el-col :span="4"><div class="grid-content bg-purple-dark">
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word1 w1" target="_blank"> 王者 </a>
+    </div></el-col>
+  </el-row>
+  <el-row class="mainwidth">
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">京东</a>
+    </div></el-col>
+    <el-col :span="6"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">理财通</a>
+    </div></el-col>
+    <el-col :span="6"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">企鹅FM</a>
+    </div></el-col>
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word2 w1" target="_blank">Q币</a>
+    </div></el-col>
+    <el-col :span="4"><div>
+      <a href="https://news.qq.com/a/20180805/008163.htm" class="word1 w1" target="_blank">全部</a>
+    </div></el-col>
+  </el-row>
+
 </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        isCollapse: true
-      };
-    },
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
+export default {
+  data () {
+    return {
+
     }
+  },
+  methods: {
+
   }
+}
 </script>
 
-<style>
- .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
+<style scoped>
+  .hold {
+    line-height: 80px;
+    height: 187px;
+    padding: 20px 0;
+  }
+  .mainwidth{
+    width: 245px;
+    line-height: 20px;
+  }
+  .el-row {
+    margin-bottom: 5px;
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: rgb(251, 253, 255);
+  }
+  .bg-purple {
+    background: rgb(251, 253, 255);
+  }
+  .bg-purple-light {
+    background:  rgb(251, 253, 255);
+  }
+  .word2 {
+  line-height: 0px;
+  height: 60px;
+  width: 10px;
+  }
+  .word1 {
+  line-height: 0px;
+  height: 60px;
+  width: 50px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: rgb(251, 253, 255);
+  }
+  .w1 {
+    text-decoration: none !important;
   }
 </style>

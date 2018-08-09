@@ -52,7 +52,7 @@ export default {
     line-height: 0px !important;
   }
   .input-with-select {
-    background-color: #fff;
+    background-color: rgb(251, 253, 255);
     width: 400px;
     line-height: 0px !important;
   }

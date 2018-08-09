@@ -7,16 +7,16 @@
     <el-col :span="4" :offset="0">
       <el-carousel height="110px">
         <el-carousel-item>
-          <img src="../assets/时光画轴.png" class="image1">
-          <img src="../assets/时光画轴.png" class="image1">
+          <a href="https://news.qq.com/a/20180805/008163.htm" class="word2" target="_blank">
+          <img src="../assets/有害信息举报1.png" class="image1"></a>
         </el-carousel-item>
         <el-carousel-item>
-          <img src="../assets/时光画轴.png" class="image1">
-          <img src="../assets/时光画轴.png" class="image1">
+          <a href="https://news.qq.com/a/20180805/008163.htm" class="word2" target="_blank">
+          <img src="../assets/有害信息举报2.png" class="image1"></a>
         </el-carousel-item>
         <el-carousel-item>
-          <img src="../assets/时光画轴.png" class="image1">
-          <img src="../assets/时光画轴.png" class="image1">
+          <a href="https://news.qq.com/a/20180805/008163.htm" class="word2" target="_blank">
+          <img src="../assets/有害信息举报2.png" class="image1"></a>
         </el-carousel-item>
       </el-carousel>
     </el-col>
@@ -35,9 +35,6 @@ export default {
 </script>
 
 <style scoped>
-  .run {
-    height: 110px;
-  }
   .button {
     padding: 1;
     float: right;
@@ -47,7 +44,8 @@ export default {
     display: block;
   }
   .image1 {
-    width: 200%;
+    width: 100%;
+    height: 100%;
     display: block;
   }
     .el-carousel__item h3 {
@@ -59,9 +57,9 @@ export default {
     height: 110px;
   }
   .el-carousel__item:nth-child(2n) {
-     background-color: #99a9bf;
+     background-color: rgb(251, 253, 255);
   }
   .el-carousel__item:nth-child(2n+1) {
-     background-color: #d3dce6;
+     background-color:  rgb(251, 253, 255);
   }
 </style>

@@ -17,12 +17,12 @@ export default{
 </script>
 <style scoped>
   .el-header, .el-footer {
-    background-color: rgb(252, 252, 253);
+    background-color: rgb(251, 253, 255);
     color: rgb(5, 5, 5);
     text-align: center;
   }
   .el-main {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(251, 253, 255);
     color: rgb(7, 7, 7);
     text-align: center;
     line-height: 25px;
