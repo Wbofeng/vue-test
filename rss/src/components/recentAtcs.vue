@@ -5,6 +5,7 @@
             <el-button class="articleBtn">
                 <div class="btn">
                     <img src="../assets/logo.png" class="bigImg">
+                    <div class="point"></div>
                     <div class="btnRight">
                         <h2>{{ suggestion.title }}</h2>
                         <div class="icons">
@@ -56,7 +57,13 @@ h1 {
     border: black solid;
     border-radius: 8px;
     height: 75px;
-    width: 75px;
+    width: 75px
+}
+.point {
+    border-radius: 50%;
+    background-color: #44bc75;
+    width: 0.5em;
+    height: 0.5em;
     margin-right: 2em
 }
 .btnRight {
