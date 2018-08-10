@@ -1,86 +1,66 @@
 <template>
     <div>
         <div class='above'>
-            <div class="headline">Featured on Winds</div>
+            <h2>Featured on Winds</h2>
             <el-row :gutter="12">
                 <el-col :span="4" v-for="(card, index) in cards" :key="index" >
                     <el-card shadow="hover" class="background">
                         <p class="abstract">{{ card.title }}</p>
-                        <p class="photoTitle">{{ card.abstract }}</p>
+                        <h2>{{ card.abstract }}</h2>
                     </el-card>
                 </el-col>
             </el-row>
         </div>
         <div class='below'>
-            <!-- below1 -->
-            <el-card class='podcasts' :span="8">              
-                <el-button class="button">
-                    <div style='float: right'>
-                        <label>View All</label>
-                        <i class="el-icon-arrow-right"></i>
-                    </div>
-                    <div class='headline'>Podcasts</div>
+            <!-- below_left -->
+            <el-card class='podcasts' :span="8"> 
+                <el-button class="passageBtn">             
+                    <el-row>
+                        <el-rol :span="4">Podcasts</el-rol>
+                        <el-rol :span="6" :offset="14">
+                            <label>View All</label>
+                            <i class="el-icon-arrow-right"></i>
+                        </el-rol>
+                    </el-row>
                 </el-button>
                 <div class="scroll">
                     <el-button class="passageBtn">Recent Episodes</el-button>
-                    <div v-for='(recentEpisode, index) in recentEpisodes' :key="index">
-                        <el-button class='passageBtn'>
-                            <el-row>
-                                <el-col span="2"><img src='../assets/logo.png' class='passageImg'></el-col>
-                                <el-col span="16"><span class='passageTitle'>{{ recentEpisode.title }}</span></el-col>
-                                <el-col span="4"><span class='epiTime'>{{ recentEpisode.time }}</span></el-col>
-                            </el-row>
-                        </el-button>
-                    </div>
+                    <wind-btn v-for='(recentEpi, index) in recentEpis' :key="index" :item="recentEpi"></wind-btn>
                     <el-button class='passageBtn'>Podcasts</el-button>
-                    <div v-for='(podcast, index) in podcasts' :key="index"> 
-                        <el-button class='passageBtn'>
-                            <el-row>
-                                <el-col span="2"><img src='../assets/logo.png' class='passageImg'></el-col>
-                                <el-col span="16"><span class='passageTitle'>{{ podcast.title }}</span></el-col>
-                                <el-col span="4"><i class="el-icon-arrow-right"></i></el-col>
-                            </el-row>
-                        </el-button>
-                    </div>
+                    <wind-btni v-for='(podcast, index) in podcasts' :key="index" :item="podcast"></wind-btni>
                 </div>
             </el-card>
-            <!-- below2 -->
-            <el-card class='rss' :span="8">               
-                <el-button class="button">
-                    <div style="float: right">
-                        <label>
-                            <router-link to="/rss" class="viewAll">View All</router-link>
-                        </label>
-                        <i class="el-icon-arrow-right"></i>
-                    </div>
-                    <div class='headline'>Rss</div>
-                </el-button>            
+            <!-- below_center -->
+            <el-card class='rss' :span="8">
+                <el-button class="passageBtn">               
+                    <el-row>
+                        <router-link to="/rss">
+                            <el-col :span="4">Rss</el-col>
+                            <el-col :span="6" :offset="14">
+                                <label>View All</label>
+                                <i class="el-icon-arrow-right"></i>
+                            </el-col>
+                        </router-link>
+                    </el-row>  
+                </el-button>          
                 <div class="scroll">
                     <el-button class="passageBtn">Recent Articles</el-button>
-                    <div v-for="(recentArticle, index) in recentArticles" :key="index">
-                        <el-button class="passageBtn">
-                            <el-row>
-                                <el-col :span="2"><img src="../assets/logo.png" class="passageImg"></el-col>
-                                <el-col :span="16"><span class="passageTitle">{{ recentArticle.title }}</span></el-col>
-                                <el-col :span="4"><span class="artTime">{{ recentArticle.time }}</span></el-col>
-                            </el-row>
-                        </el-button>
-                    </div>
+                    <wind-btn v-for='(recentAtc, index) in recentAtcs' :key="index" :item="recentAtc"></wind-btn>
                     <el-button class="passageBtn">Feeds</el-button>
-                    <div v-for="(feed, index) in feeds" :key="index">
-                        <el-button class="passageBtn">
-                            <el-row>
-                                <el-col :span="4"><img src="../assets/logo.png" class="passageImg"></el-col>
-                                <el-col :span="16"><span class="passageTitle">{{ feed.title }}</span></el-col>
-                                <el-col :span="4"><i class="el-icon-arrow-right"></i></el-col>
-                            </el-row>
-                        </el-button>
-                    </div>
+                    <wind-btni v-for='(feed, index) in feeds' :key="index" :item="feed"></wind-btni>
                 </div>
             </el-card>
-            <!-- below3 -->
+            <!-- below_right -->
             <el-card class='discover' :span="8">
-                <div class='headline'>Discover</div>
+                <el-button class="passageBtn"> 
+                    <el-row>
+                        <el-col :span="6">Discover</el-col>
+                        <el-col :span="4" :offset="10">Refresh</el-col>
+                        <el-col :span="4">
+                            <img src="../assets/logo.png" class="passageImg">
+                        </el-col>
+                    </el-row>
+                </el-button>
                 <div class="scroll">
                     <el-row :gutter="20">                     
                             <el-col v-for="(disCard, index) in disCards" :key="index" :span="8">
@@ -93,10 +73,16 @@
                     <div v-for="(discover,index) in discovers" :key="index">
                         <el-button class="passageBtn">
                             <el-row>
-                                <el-col :span="2"><img src="../assets/logo.png" class="passageImg"></el-col>
-                                <el-col :span="16"><span class="passageTitle">{{ discover.title }}</span></el-col>                         
-                                <el-col :span="4"><h>View All</h></el-col>
-                                <el-col :span="1"><i class="el-icon-arrow-right"></i></el-col>
+                                <el-col :span="2">
+                                    <img src="../assets/logo.png" class="passageImg">
+                                </el-col>
+                                <el-col :span="16">
+                                    <span class="passageTitle">{{ discover.title }}</span>
+                                </el-col>                         
+                                <el-col :span="4">View All</el-col>
+                                <el-col :span="1">
+                                    <i class="el-icon-arrow-right"></i>
+                                </el-col>
                             </el-row>
                         </el-button>
                     </div>
@@ -111,23 +97,18 @@
     height: 200px;
     overflow: auto
 }
-.headline {
+
+h2 {
     text-align: left;
-    padding-top: 5px;
-    padding-bottom: 20px;
     font-weight: bold;
-    color:black;
-    clear: none
+    color: black
 }
+
 .abstract {
     font-size: 16px;
     margin-top: 0px
 }
-.photoTitle {
-    font-size: 20px;
-    margin-top: 60px;
-    margin-bottom: 0px;
-}
+
 .above {
     padding: 20px 20px;
     height: 50%;
@@ -137,26 +118,29 @@
     height: 50%;
     display: flex
 }
+
 .podcasts, .rss, .discover {
     height: 300px;
-    width: 33%;
+    width: 33%
 }
-.button {
-    border-color: transparent;
-    width: 100%;
-    height: 60px;
+
+titleRight {
+    margin-right: 0
 }
+
 .passageBtn {
     border-color: transparent;
     width: 100%;
-    height: 40px;
+    height: 40px
 }
+
 .background {
     background-image: url('../assets/logo.png');
     background-size: 100% 100%;
     text-align: left;
     border-radius: 10px
 }
+
 .passageImg {
     height: 100%;
     width: 15px;
@@ -164,17 +148,26 @@
     border-color:black;
     border-style: solid
 }
+
 .passageTitle {
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis
 }
+
 .viewAll {
     text-decoration: none
 }
 </style>
 
 <script>
+    import windBtn from'@/components/windBtn'
+    import windBtni from '@/components/windBtni'
+
     export default {
+        components: {
+            windBtn,
+            windBtni
+        },
         data() {
            return {
                 cards: [
@@ -203,7 +196,7 @@
                        abstract: '11'
                    }
                 ],
-                recentEpisodes: [
+                recentEpis: [
                     { 
                         title: "passage title",
                         time: "2 hours"
@@ -279,7 +272,7 @@
                     { title: "passage title" },
                     { title: "passage title" }
                 ],
-                recentArticles: [
+                recentAtcs: [
                     { 
                         title: "passage title",
                         time: "2 hours"
@@ -372,50 +365,6 @@
                     { title: "a" },
                     { title: "a" },
                     { title: "a" }
-                ],
-                time1s: [
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" },
-                    { title: "a year" }
-                ],
-                time2s: [
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
-                    { title: "2 hours" },
                 ]
             }
         }

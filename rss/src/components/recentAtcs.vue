@@ -26,39 +26,45 @@
 
 <style scoped>
 h1 {
-    text-align: left;
-
+    text-align: left
 }
+
 .title {
     margin: 1.7em 0;
     display: flex;
     align-items: center
 }
+
 .followBtn {
     font-size: 0.6em;
     margin-left: auto;
     margin-right: 0
 }
+
 .webTitle {
     text-align: left;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px
 }
+
 .articleBtn {
     width:100%;
     border-color: transparent
 }
+
 .btn {
     width: 100%;
     display: flex
 }
+
 .bigImg {
     border: black solid;
     border-radius: 8px;
     height: 75px;
     width: 75px
 }
+
 .point {
     border-radius: 50%;
     background-color: #44bc75;
@@ -66,9 +72,11 @@ h1 {
     height: 0.5em;
     margin-right: 2em
 }
+
 .btnRight {
     text-align: left
 }
+
 h2 {
     font-weight: 500;
     overflow: hidden;
@@ -76,12 +84,14 @@ h2 {
     font-size: 1.5em;
     margin: 0
 }
+
 .icons {
     margin-bottom: 1em;
     margin-top: 1em;
     display: flex;
     align-items: center
 }
+
 .icon {
     width: 15px;
     height: 15px;
@@ -89,10 +99,12 @@ h2 {
     border-radius: 5px;
     margin-left: 1em
 }
+
 .time {
     margin-left: 1em;
     color: #aaa
 }
+
 h3 {
     margin: 0;
     overflow: hidden;

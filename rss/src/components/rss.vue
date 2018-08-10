@@ -4,9 +4,10 @@
             <div class="leftUp">
                 <div class="headline">RSS</div>
                 <el-menu :default-active="activeIndex" 
-                class="el-menu-demo" 
-                mode="horizontal" 
-                @select="handleSelect">
+                         class="el-menu-demo" 
+                         mode="horizontal" 
+                         @select="handleSelect"
+                >
                     <el-menu-item index="1" @click="count = 1">ALL FEEDS</el-menu-item>
                     <el-menu-item index="2" @click="count = 2">BOOKMARKS</el-menu-item>
                     <el-menu-item index="3" @click="count = 3">SUGGESTIONS</el-menu-item>
@@ -22,7 +23,9 @@
                         <el-button class="leftBtn">
                             <router-link to="/rss/recentAtc">
                                 <el-row>
-                                    <el-col :span="2"><img src="../assets/logo.png" class="smallImg"></el-col>
+                                    <el-col :span="2">
+                                        <img src="../assets/logo.png" class="smallImg">
+                                    </el-col>
                                     <el-col :span="16">{{ recentAtc.title }}</el-col>
                                     <el-col :span="4">{{ recentAtc.time }}</el-col>
                                 </el-row>
@@ -34,9 +37,13 @@
                         <el-button class="leftBtn">
                             <router-link to="/rss/feeds">
                                 <el-row>
-                                    <el-col :span="2"><img src="../assets/logo.png" class="smallImg"></el-col>
+                                    <el-col :span="2">
+                                        <img src="../assets/logo.png" class="smallImg">
+                                    </el-col>
                                     <el-col :span="16">{{feed.title}}</el-col>
-                                    <el-col :span="1"><i class="el-icon-arrow-right"></i></el-col>
+                                    <el-col :span="1">
+                                        <i class="el-icon-arrow-right"></i>
+                                    </el-col>
                                 </el-row>
                             </router-link>
                         </el-button>
@@ -49,7 +56,9 @@
                         <el-button class="leftBtn">
                             <router-link to="/rss/bookmarks">
                                 <el-row>
-                                    <el-col :span="2"><img src="../assets/logo.png" class="smallImg"></el-col>
+                                    <el-col :span="2">
+                                        <img src="../assets/logo.png" class="smallImg">
+                                    </el-col>
                                     <el-col :span="16">{{ bookmark.title }}</el-col>
                                     <el-col :span="4">{{ bookmark.time }}</el-col>
                                 </el-row>
@@ -64,9 +73,13 @@
                         <el-button class="leftBtn">
                             <router-link to="/rss/suggestions">
                                     <el-row>
-                                        <el-col :span="2"><img src="../assets/logo.png" class="smallImg"></el-col>
+                                        <el-col :span="2">
+                                            <img src="../assets/logo.png" class="smallImg">
+                                        </el-col>
                                         <el-col :span="16">{{ suggestion.title }}</el-col>
-                                        <el-col :span="4"><el-button class="followBtn">FOLLOW</el-button></el-col>
+                                        <el-col :span="4">
+                                            <el-button class="followBtn">FOLLOW</el-button>
+                                        </el-col>
                                     </el-row>
                             </router-link>
                         </el-button>
@@ -84,27 +97,33 @@
 .aside{
     width: 33%
 }
+
 .main {
     width: 66%
 }
+
 .leftUp {
     height: 100px
 }
+
 .leftDown {
     height: 400px
 }
+
 .el-menu-item {
     width: 33%;
     font-size: 11px;
     font-weight: 600;
     padding: 0
 }
+
 .headline {
     text-align: left;
     font-weight: bold;
     font-size: 20px;
     margin: 5px 0
 }
+
 .smallImg {
     height: 100%;
     width: 15px;
@@ -112,6 +131,7 @@
     border-color:black;
     border-style: solid
 }
+
 .mediumImg {
     height: 100%;
     width: 20px;
@@ -119,6 +139,7 @@
     border-color:black;
     border-style: solid
 }
+
 .bigImg {
     height: 100%;
     width: 30px;
@@ -126,10 +147,12 @@
     border-color:black;
     border-style: solid
 }
+
 .leftBtn {
     width: 100%;
     border-color: transparent
 }
+
 .followBtn {
     border-color: transparent;
     width: 80px;
@@ -171,7 +194,7 @@ export default {
                 { title: "passage title" },
                 { title: "passage title" },
                 { title: "passage title" },
-                { title: "passage title" },
+                { title: "passage title" }
             ],
             bookmarks: [
                 { 
@@ -193,14 +216,14 @@ export default {
                 { 
                     title: "passage title",
                     time: "2 hours" 
-                },
+                }
             ],
             suggestions: [
                 { title: "passage title" },
                 { title: "passage title" },
                 { title: "passage title" },
                 { title: "passage title" },
-                { title: "passage title" },
+                { title: "passage title" }
             ]
         }
     }
