@@ -33,7 +33,8 @@
 export default {
   data () {
     return {
-      items: [
+      items:
+      [
         {
           nub: 1,
           href: 'https://news.qq.com/a/20180805/008163.htm',
