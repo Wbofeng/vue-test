@@ -1,15 +1,25 @@
 <template>
-<el-container>
-  <el-header><lastHeader></lastHeader></el-header>
-  <el-main><lastMain></lastMain></el-main>
-  <el-footer><lastFooter></lastFooter></el-footer>
-</el-container>
+  <el-container>
+    <el-header>
+      <lastHeader>
+      </lastHeader>
+    </el-header>
+    <el-main>
+      <lastMain>
+      </lastMain>
+    </el-main>
+    <el-footer>
+      <lastFooter>
+      </lastFooter>
+    </el-footer>
+  </el-container>
 </template>
 
 <script>
 import lastHeader from '../components/lastHeader.vue'
 import lastMain from '../components/lastMain.vue'
 import lastFooter from '../components/lastFooter.vue'
+
 export default {
   components: {
     lastHeader,

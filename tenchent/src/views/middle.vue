@@ -1,19 +1,29 @@
 <template>
-<el-container>
-  <el-header><middleHeader></middleHeader></el-header>
   <el-container>
-    <el-aside width="1055px"><middleAside></middleAside></el-aside>
+    <el-header>
+      <middleHeader>
+      </middleHeader>
+    </el-header>
     <el-container>
-      <el-main><middlemain></middlemain></el-main>
+      <el-aside width="1055px">
+        <middleAside>
+        </middleAside>
+      </el-aside>
+      <el-container>
+        <el-main>
+          <middlemain>
+          </middlemain>
+        </el-main>
+      </el-container>
     </el-container>
   </el-container>
-</el-container>
 </template>
 
 <script>
 import middleHeader from '../components/middleHeader.vue'
 import middleAside from '../components/middleAside.vue'
 import middlemain from '../components/middlemain.vue'
+
 export default {
   components: {
     middleHeader,
@@ -46,7 +56,7 @@ export default {
     text-align: center;
     padding: 0px;
   }
-    body > .el-container {
+  body > .el-container {
     margin-bottom: 0px;
   }
   .el-container:nth-child(5) .el-aside,
