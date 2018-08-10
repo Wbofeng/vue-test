@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Web from './views/web.vue'
+
 Vue.use(Router)
 
 export default new Router({
