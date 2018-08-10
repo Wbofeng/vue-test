@@ -29,49 +29,52 @@
 export default {
   data () {
     return {
-      options: [{
-        value: '选项1',
-        label: '天气'
-      },
-      {
-        value: '选项2',
-        label: '谷雨'
-      },
-      {
-        value: '选项3',
-        label: '城市'
-      },
-      {
-        value: '选项4',
-        label: '科普'
-      },
-      {
-        value: '选项5',
-        label: '德甲'
-      },
-      {
-        value: '选项6',
-        label: '美容'
-      },
-      {
-        value: '选项7',
-        label: '动漫'
-      },
-      {
-        value: '选项8',
-        label: '享看'
-      },
-      {
-        value: '选项9',
-        label: '港股'
-      },
-      {
-        value: '选项10',
-        label: '全部'
-      }
+      options:
+      [
+        {
+          value: '选项1',
+          label: '天气'
+        },
+        {
+          value: '选项2',
+          label: '谷雨'
+        },
+        {
+          value: '选项3',
+          label: '城市'
+        },
+        {
+          value: '选项4',
+          label: '科普'
+        },
+        {
+          value: '选项5',
+          label: '德甲'
+        },
+        {
+          value: '选项6',
+          label: '美容'
+        },
+        {
+          value: '选项7',
+          label: '动漫'
+        },
+        {
+          value: '选项8',
+          label: '享看'
+        },
+        {
+          value: '选项9',
+          label: '港股'
+        },
+        {
+          value: '选项10',
+          label: '全部'
+        }
       ],
       value: '选项1',
-      line_1: [
+      line_1:
+      [
         {
           nub: 1,
           msg: '新闻',
@@ -173,7 +176,8 @@ export default {
           herf: 'https://news.qq.com/a/20180805/008163.htm'
         }
       ],
-      line_2: [
+      line_2:
+      [
         {
           nub: 1,
           msg: '财经',

@@ -206,14 +206,14 @@
   background:  rgb(251, 253, 255);
 }
 .word2 {
-line-height: 0px;
-height: 60px;
-width: 10px;
+  line-height: 0px;
+  height: 60px;
+  width: 10px;
 }
 .word1 {
-line-height: 0px;
-height: 60px;
-width: 50px;
+  line-height: 0px;
+  height: 60px;
+  width: 50px;
 }
 .row-bg {
   padding: 10px 0;

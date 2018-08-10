@@ -41,7 +41,8 @@
 export default {
   data () {
     return {
-      items: [
+      items:
+      [
         {
           nub: 1,
           href: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel',
@@ -79,7 +80,8 @@ export default {
           img: require('../assets/出门小帅哥.png')
         }
       ],
-      items_scd: [
+      items_scd:
+      [
         {
           nub: 1,
           href: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel',

@@ -40,7 +40,8 @@
 export default {
   data () {
     return {
-      fis_line: [
+      fis_line:
+      [
         {
           nub: 1,
           msg: '关于腾讯',
@@ -102,7 +103,8 @@ export default {
           href: 'https://news.qq.com/a/20180805/008163.htm'
         }
       ],
-      scd_line: [
+      scd_line:
+      [
         {
           nub: 1,
           msg: '深圳举报中心',
@@ -129,7 +131,8 @@ export default {
           href: 'https://news.qq.com/a/20180805/008163.htm'
         }
       ],
-      thr_line: [
+      thr_line:
+      [
         {
           nub: 1,
           msg: '广东省通管局',
@@ -162,7 +165,8 @@ export default {
           href: 'https://news.qq.com/a/20180805/008163.htm'
         }
       ],
-      four_line: [
+      four_line:
+      [
         {
           nub: 1,
           msg: '新闻信息服务许可证',

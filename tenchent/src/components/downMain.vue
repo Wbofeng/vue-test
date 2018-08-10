@@ -26,12 +26,16 @@
         <el-row class="word4">
           <el-col :span="12">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-            <img src="../assets/探访尘肺农民.png" class="picture2" ></a><br>
+              <img src="../assets/探访尘肺农民.png" class="picture2" >
+            </a>
+            <br>
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="w1">袁立探访尘肺病农民家庭</a>
           </el-col>
           <el-col :span="12">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-            <img src="../assets/出门小帅哥.png" class="picture2" ></a><br>
+              <img src="../assets/出门小帅哥.png" class="picture2" >
+            </a>
+            <br>
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="w1">他们外出时竟然带这些</a>
           </el-col>
         </el-row>
@@ -96,7 +100,8 @@
         </el-col>
         <el-col :span="6" :offset="1" class="tab7">
           <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-          <img src="../assets/白羊.png" class="picture4" ></a>
+            <img src="../assets/白羊.png" class="picture4" >
+          </a>
         </el-col>
         <el-col :span="15" :offset="2" class="tab6">
           <el-select v-model="value" placeholder="白羊座" class="tab6 w1">
@@ -133,7 +138,8 @@ export default {
       input5: '',
       select: '',
       picked: '',
-      options: [
+      options:
+      [
         {
           value: '选项1',
           label: '白羊座'
@@ -183,7 +189,8 @@ export default {
         }
       ],
       value: '',
-      items: [
+      items:
+      [
         {
           nub: 1,
           label: '上证',
@@ -225,7 +232,8 @@ export default {
           rase: '+55.41 +2.85%'
         }
       ],
-      news: [
+      news:
+      [
         {
           nub: 1,
           href: 'https://news.qq.com/a/20180805/008163.htm',
@@ -282,7 +290,8 @@ export default {
           msg: '皮肤损伤贴芦荟？使用不当会过敏！'
         }
       ],
-      today: [
+      today:
+      [
         {
           nub: 1,
           href: 'https://news.qq.com/a/20180805/008163.htm',
@@ -364,7 +373,7 @@ export default {
   height: 130%;
 }
 .word0 {
-margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 .word1 {
   line-height: 80px;
@@ -420,12 +429,12 @@ margin-bottom: 0px;
   font-size: 12px;
 }
 .tab1 {
-line-height: 0px;
-padding: 0 0px;
+  line-height: 0px;
+  padding: 0 0px;
 }
 .tab2 {
-line-height: 0px;
-padding: 0 0px !important;
+  line-height: 0px;
+  padding: 0 0px !important;
 }
 .tab3 {
   line-height: 20px;

@@ -30,7 +30,8 @@ export default {
   data () {
     return {
       activeName: 'second',
-      items: [
+      items:
+      [
         {
           message: '社保改由税务部门来收，企业雇个人得多花多少钱',
           msg: 'https://news.qq.com/a/20180805/008163.htm',
@@ -67,7 +68,8 @@ export default {
           nub: 7
         }
       ],
-      impNews: [
+      impNews:
+      [
         {
           message: '习近平推崇的那些奋斗者',
           msg: 'https://news.qq.com/a/20180805/008163.htm',
@@ -109,7 +111,8 @@ export default {
           nub: 8
         }
       ],
-      hbNews: [
+      hbNews:
+      [
         {
           message: '今日河北省中北部有大到暴雨',
           msg: 'https://news.qq.com/a/20180805/008163.htm',
