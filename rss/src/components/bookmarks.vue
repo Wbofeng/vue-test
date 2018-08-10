@@ -3,9 +3,9 @@
         <div class="up">
             <h1>Article Title</h1>   
             <div class="icons">
-                <img src='../assets/logo.png' class="icon">            <!-- click   -->
-                <img src='../assets/logo.png' class="icon">            <!-- click   -->
-                <span>WEBSITE</span>                                   <!-- click   -->
+                <img src='../assets/logo.png' class="icon">            
+                <img src='../assets/logo.png' class="icon">            
+                <span>WEBSITE</span>                                   
                 <span class="time">POSTED NUMBER HOURS AGO</span>
             </div>
         </div>
