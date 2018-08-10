@@ -2,8 +2,8 @@
   <div>
     <home></home>
   </div>
-
 </template>
+
 <script>
 import home from './views/home.vue'
 export default {
@@ -12,7 +12,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

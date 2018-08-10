@@ -35,7 +35,4 @@ export default{
   text-align: center;
   line-height: 25px;
 }
-body > .el-container {
-  margin-bottom: 60px;
-}
 </style>

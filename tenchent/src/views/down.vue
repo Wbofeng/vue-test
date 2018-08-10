@@ -51,7 +51,4 @@ export default {
   line-height: 160px;
   height: 431px !important;
 }
-body > .el-container {
-  margin-bottom: 0px;
-}
 </style>
