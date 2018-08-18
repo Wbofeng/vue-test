@@ -14,9 +14,9 @@
         <div class='below'>
             <!-- below_left -->
             <el-card class='podcasts' :span="8"> 
-                <el-button class="passageBtn">             
+                <el-button class="titleBtn">             
                     <el-row>
-                        <el-rol :span="4">Podcasts</el-rol>
+                        <el-rol :span="4" class="title">Podcasts</el-rol>
                         <el-rol :span="6" :offset="14">
                             <label>View All</label>
                             <i class="el-icon-arrow-right"></i>
@@ -24,18 +24,18 @@
                     </el-row>
                 </el-button>
                 <div class="scroll">
-                    <el-button class="passageBtn">Recent Episodes</el-button>
+                    <el-button class="subtitle">Recent Episodes</el-button>
                     <wind-btn v-for='(recentEpi, index) in recentEpis' :key="index" :item="recentEpi"></wind-btn>
-                    <el-button class='passageBtn'>Podcasts</el-button>
+                    <el-button class='subtitle'>Podcasts</el-button>
                     <wind-btni v-for='(podcast, index) in podcasts' :key="index" :item="podcast"></wind-btni>
                 </div>
             </el-card>
             <!-- below_center -->
             <el-card class='rss' :span="8">
-                <el-button class="passageBtn">               
+                <el-button class="titleBtn">               
                     <el-row>
                         <router-link to="/rss">
-                            <el-col :span="4">Rss</el-col>
+                            <el-col :span="4" class="title">Rss</el-col>
                             <el-col :span="6" :offset="14">
                                 <label>View All</label>
                                 <i class="el-icon-arrow-right"></i>
@@ -44,20 +44,20 @@
                     </el-row>  
                 </el-button>          
                 <div class="scroll">
-                    <el-button class="passageBtn">Recent Articles</el-button>
+                    <el-button class="subtitle">Recent Articles</el-button>
                     <wind-btn v-for='(recentAtc, index) in recentAtcs' :key="index" :item="recentAtc"></wind-btn>
-                    <el-button class="passageBtn">Feeds</el-button>
+                    <el-button class="subtitle">Feeds</el-button>
                     <wind-btni v-for='(feed, index) in feeds' :key="index" :item="feed"></wind-btni>
                 </div>
             </el-card>
             <!-- below_right -->
             <el-card class='discover' :span="8">
-                <el-button class="passageBtn"> 
+                <el-button class="titleBtn"> 
                     <el-row>
-                        <el-col :span="6">Discover</el-col>
-                        <el-col :span="4" :offset="10">Refresh</el-col>
-                        <el-col :span="4">
-                            <img src="../assets/logo.png" class="passageImg">
+                        <el-col :span="6" class="title">Discover</el-col>
+                        <el-col :span="6" :offset="12">
+                            <label>Refresh</label>
+                            <img src="../assets/refresh.png" class="refresh">
                         </el-col>
                     </el-row>
                 </el-button>
@@ -98,12 +98,6 @@
     overflow: auto
 }
 
-h2 {
-    text-align: left;
-    font-weight: bold;
-    color: black
-}
-
 .abstract {
     font-size: 16px;
     margin-top: 0px
@@ -128,10 +122,28 @@ titleRight {
     margin-right: 0
 }
 
-.passageBtn {
+.passageBtn, .subtitle, .titleBtn {
     border-color: transparent;
     width: 100%;
     height: 40px
+}
+
+.titleBtn {
+    height: 50px
+}
+
+.subtitle, .title, h2{
+    text-align: left;
+    color: black;
+    font-weight: bold
+}
+
+.title {
+    font-size: 1.5em
+}
+
+.subtitle, label {
+    font-size: 0.8em
 }
 
 .background {
@@ -147,6 +159,11 @@ titleRight {
     border-radius: 5px;
     border-color:black;
     border-style: solid
+}
+
+.refresh {
+    height: 15px;
+    width: 15px
 }
 
 .passageTitle {

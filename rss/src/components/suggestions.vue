@@ -1,19 +1,20 @@
 <template>
     <div>
         <div class="title">
+            <img src="../assets/logo.png" class="webImg">
             <span class="webTitle">Website Name</span>
             <el-button class="followBtn">follow</el-button>
         </div>   
         <div v-for="(suggestion, index) in suggestions" :key="index">
             <el-button class="articleBtn">
                 <div class="btn">
-                    <img src="../assets/logo.png" class="bigImg">
+                    <img :src="suggestion.img" class="bigImg">
                     <div class="btnRight">
                         <h2>{{ suggestion.title }}</h2>
                         <div class="icons">
-                            <img src="../assets/logo.png" class="icon">
+                            <img src="../assets/bookmark.png" class="icon">
                             <div>
-                                <img src="../assets/logo.png" class="icon">
+                                <img src="../assets/share.png" class="icon">
                                 <span class="">WEBSITE</span>
                             </div>
                             <span class="time">{{ suggestion.time }}</span>
@@ -32,25 +33,30 @@
     display: flex;
     align-items: center
 }
+
 .followBtn {
     font-size: 0.6em;
     margin-left: auto;
     margin-right: 0
 }
+
 .webTitle {
     text-align: left;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px
 }
+
 .articleBtn {
     width:100%;
     border-color: transparent
 }
+
 .btn {
     width: 100%;
     display: flex
 }
+
 .bigImg {
     border: black solid;
     border-radius: 8px;
@@ -58,9 +64,19 @@
     width: 75px;
     margin-right: 2em
 }
+
+.webImg {
+    border-radius: 5px;
+    height: 65px;
+    width: 65px;
+    border: black solid
+
+}
+
 .btnRight {
     text-align: left
 }
+
 h2 {
     font-weight: 500;
     overflow: hidden;
@@ -68,23 +84,26 @@ h2 {
     font-size: 1.5em;
     margin: 0
 }
+
 .icons {
     margin-bottom: 1em;
     margin-top: 1em;
     display: flex;
     align-items: center
 }
+
 .icon {
     width: 15px;
     height: 15px;
-    border: black solid;
     border-radius: 5px;
     margin-left: 1em
 }
+
 .time {
     margin-left: 1em;
     color: #aaa
 }
+
 h3 {
     margin: 0;
     overflow: hidden;
@@ -100,26 +119,31 @@ h3 {
             return {
                 suggestions: [
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"

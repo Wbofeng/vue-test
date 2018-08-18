@@ -4,14 +4,14 @@
         <div v-for="(suggestion, index) in suggestions" :key="index">
             <el-button class="articleBtn">
                 <div class="btn">
-                    <img src="../assets/logo.png" class="bigImg">
+                    <img :src="suggestion.img" class="bigImg">
                     <div class="point"></div>
                     <div class="btnRight">
                         <h2>{{ suggestion.title }}</h2>
                         <div class="icons">
-                            <img src="../assets/logo.png" class="icon">
+                            <img src="../assets/bookmark.png" @click="mark(suggestion)">
                             <div>
-                                <img src="../assets/logo.png" class="icon">
+                                <img src="../assets/share.png">
                                 <span class="">WEBSITE</span>
                             </div>
                             <span class="time">{{ suggestion.time }}</span>
@@ -92,10 +92,9 @@ h2 {
     align-items: center
 }
 
-.icon {
+img {
     width: 15px;
     height: 15px;
-    border: black solid;
     border-radius: 5px;
     margin-left: 1em
 }
@@ -115,37 +114,61 @@ h3 {
 </style>
 
 <script>
-    export default {
-        data() {
-            return {
-                suggestions: [
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    }
-                ]
-            }
+import eventBus from '../router/eventBus.js'
+
+export default {
+    data() {
+        return {
+            suggestions: [
+                {   
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                }
+            ]
         }
+    },
+    methods: {
+        mark(sug) {
+            sug.isMarked = !sug.isMarked;
+            if(sug.isMarked) {
+                let {img, title, time } = sug;
+                var item = { img, title, time };
+                eventBus.$emit('addMark', item);
+            }else {
+                eventBus.$emit('deleteMark')
+            }
+        }          
     }
+}
 </script>

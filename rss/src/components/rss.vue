@@ -19,35 +19,15 @@
                     <router-link to="/rss/recentAtcs">
                         <el-button class="leftBtn">Recent Articles</el-button>
                     </router-link>
-                    <div v-for="(recentAtc, index) in recentAtcs" :key="index">
-                        <el-button class="leftBtn">
-                            <router-link to="/rss/recentAtc">
-                                <el-row>
-                                    <el-col :span="2">
-                                        <img src="../assets/logo.png" class="smallImg">
-                                    </el-col>
-                                    <el-col :span="16">{{ recentAtc.title }}</el-col>
-                                    <el-col :span="4">{{ recentAtc.time }}</el-col>
-                                </el-row>
-                            </router-link>
-                        </el-button>
-                    </div>
+                        <router-link to="/rss/recentAtc">
+                            <wind-btn v-for="(recentAtc, index) in recentAtcs" :key="index" :item="recentAtc">
+                            </wind-btn>
+                        </router-link>
                     <p>Feeds</p>
-                    <div v-for="(feed, index) in feeds" :key="index">
-                        <el-button class="leftBtn">
-                            <router-link to="/rss/feeds">
-                                <el-row>
-                                    <el-col :span="2">
-                                        <img src="../assets/logo.png" class="smallImg">
-                                    </el-col>
-                                    <el-col :span="16">{{feed.title}}</el-col>
-                                    <el-col :span="1">
-                                        <i class="el-icon-arrow-right"></i>
-                                    </el-col>
-                                </el-row>
-                            </router-link>
-                        </el-button>
-                    </div>
+                    <router-link to="/rss/feeds">
+                        <wind-btni v-for="(feed, index) in feeds" :key="index" :item="feed">
+                        </wind-btni>
+                    </router-link>
                 </div>
                 <!-- bookmarks -->
                 <div v-show="count == 2">
@@ -57,7 +37,7 @@
                             <router-link to="/rss/bookmarks">
                                 <el-row>
                                     <el-col :span="2">
-                                        <img src="../assets/logo.png" class="smallImg">
+                                        <img :src="bookmark.img" class="smallImg">
                                     </el-col>
                                     <el-col :span="16">{{ bookmark.title }}</el-col>
                                     <el-col :span="4">{{ bookmark.time }}</el-col>
@@ -87,7 +67,7 @@
                 </div>
             </div>
         </el-aside>
-        <el-main clas="main">
+        <el-main class="main">
             <router-view></router-view>
         </el-main>
     </el-container>
@@ -162,7 +142,15 @@
 </style>
 
 <script>
+import windBtn from '@/components/windBtn'
+import windBtni from '@/components/windBtni'
+import eventBus from '../router/eventBus.js'
+
 export default {
+    components: {
+        windBtn,
+        windBtni
+    },
     data() {
         return {
             activeIndex: '1',
@@ -196,28 +184,7 @@ export default {
                 { title: "passage title" },
                 { title: "passage title" }
             ],
-            bookmarks: [
-                { 
-                    title: "passage title",
-                    time: "2 hours" 
-                },
-                { 
-                    title: "passage title",
-                    time: "2 hours" 
-                },
-                { 
-                    title: "passage title",
-                    time: "2 hours" 
-                },
-                { 
-                    title: "passage title",
-                    time: "2 hours" 
-                },
-                { 
-                    title: "passage title",
-                    time: "2 hours" 
-                }
-            ],
+            bookmarks: [],
             suggestions: [
                 { title: "passage title" },
                 { title: "passage title" },
@@ -226,6 +193,15 @@ export default {
                 { title: "passage title" }
             ]
         }
+    },
+    created() {
+        eventBus.$on('addMark', (item) => {
+            item.time.toLowerCase();
+            this.bookmarks.unshift(item)
+        });
+        eventBus.$on('deleteMark', () => {
+            this.bookmarks.shift()
+        })      
     }
 }
 </script>

@@ -3,8 +3,8 @@
         <div class="up">
             <h1>Article Title</h1>   
             <div class="icons">
-                <img src='../assets/logo.png' class="icon">            
-                <img src='../assets/logo.png' class="icon">            
+                <img src='../assets/bookmark.png' class="icon">            
+                <img src='../assets/twitter.png' class="icon">            
                 <span>WEBSITE</span>                                   
                 <span class="time">POSTED NUMBER HOURS AGO</span>
             </div>
@@ -27,7 +27,6 @@ h1 {
 .icon {
     width: 12px;
     height: 12px;
-    border: black solid;
     border-radius: 4px
 }
 

@@ -8,17 +8,18 @@
         <div v-for="(article, index) in articles" :key="index">
             <el-button class="articleBtn">
                 <div class="btn">
-                    <img src="../assets/logo.png" class="bigImg">
+                    <img :src="article.img" class="bigImg">
                     <div class="btnRight">
                         <h2>{{ article.title }}</h2>
+                        <div></div>
                         <div class="icons">
-                            <img src="../assets/logo.png" class="icon">
+                            <img src="../assets/bookmark.png" class="icon">
                             <div>
-                                <img src="../assets/logo.png" class="icon">
+                                <img src="../assets/share.png" class="icon">
                                 <span class="">WEBSITE</span>
                             </div>
                             <div>
-                                <img src="../assets/logo.png" class="icon">
+                                <img src="../assets/comment.png" class="icon">
                                 <span>COMMENTS</span>
                             </div>
                             <span class="time">{{ article.time }}</span>
@@ -99,7 +100,6 @@ h2 {
 .icon {
     width: 15px;
     height: 15px;
-    border: black solid;
     border-radius: 5px;
     margin-left: 1em
 }
@@ -123,26 +123,31 @@ h3{
             return {
                 articles: [
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
