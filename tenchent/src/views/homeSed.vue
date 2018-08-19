@@ -15,7 +15,6 @@ import sedTitle from '../views/second/sedTitle.vue'
 import sedMain from '../views/second/sedMain.vue'
 import sedLike from '../views/second/sedLike.vue'
 import sedTalk from '../views/second/sedTalk.vue'
-import sedRecommend from '../views/second/sedRecommend.vue'
 import sedFooter from '../views/second/sedFooter.vue'
 export default {
   components: {
@@ -24,7 +23,6 @@ export default {
     sedMain,
     sedLike,
     sedTalk,
-    sedRecommend,
     sedFooter
   }
 }
