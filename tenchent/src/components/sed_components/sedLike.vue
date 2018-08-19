@@ -10,7 +10,7 @@
     </el-col>
     <el-col :span="24" style="text-align: center;">
       <a href="http://news.qq.com/">
-        <img src="../../assets/like.png"  class="like">
+        <img src="../../assets/like.png" class="like">
       </a>
     </el-col>
     <el-col :span="2" :offset="11" style="text-align: center;">
@@ -36,31 +36,24 @@ export default {
 </script>
 
 <style scoped>
-.el-main {
-    background-color: rgb(162, 115, 248);
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-    height: 378px;
-}
-.wd1{
+.wd1 {
   text-align: center;
   padding-top: 100px;
   font-size: 20px;
 }
-.wd2{
+.wd2 {
   text-align: center;
   padding-top: 20px;
   font-size: 12px;
 }
-.wd3{
+.wd3 {
   text-decoration: none;
   padding-top: 10px;
   font-size: 14px;
   padding-right: 10px;
   color: rgb(121, 120, 120);
 }
-.like{
+.like {
   padding-top: 50px;
   width: 5%;
 }

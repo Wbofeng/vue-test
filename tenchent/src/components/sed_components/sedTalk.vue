@@ -6,7 +6,9 @@
         <el-col :span="4" style="font-size: 25px;">网友评论</el-col>
         <el-col :span="12" style="padding-top: 10px;">
           文明上网理性发言，请遵守
-          <a href="http://news.qq.com/" class="wd1">新闻评论服务协议</a>
+          <a href="http://news.qq.com/" class="wd1">
+            新闻评论服务协议
+          </a>
         </el-col>
         <el-col :span="8" style="text-align: right; padding-top: 10px;">
           <a href="http://news.qq.com/"  class="talk">

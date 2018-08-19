@@ -3,6 +3,10 @@
     <el-col :span="11" :offset="5">
       <el-tabs v-model="activeName" @tab-click="handleClick" class="word">
         <el-tab-pane label="要闻" name="first" class="word1">
+            <router-link to="homeSed" target="_blank" class="word2 w1" style="color: rgb(248, 200, 95)">
+              现实版“小偷家族”：当始终怀有对民生疾苦的敏感
+            </router-link>
+            <br>
           <a v-for="item in impNews" :href="item.msg" :key='item.nub' target="_blank" class="word2 w1">{{item.message}}<br></a>
         </el-tab-pane>
         <el-tab-pane label="河北新闻" name="second" class="word1">
@@ -104,11 +108,6 @@ export default {
           message: '内蒙古库布其沙漠治理经验，风雨无阻创造美好生活',
           msg: 'https://news.qq.com/a/20180805/008163.htm',
           nub: 7
-        },
-        {
-          message: '给孩子清朗的网络空间 保障未成年人健康上网',
-          msg: 'https://news.qq.com/a/20180805/008163.htm',
-          nub: 8
         }
       ],
       hbNews:

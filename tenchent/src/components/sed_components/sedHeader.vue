@@ -18,10 +18,22 @@
           </span>
           <el-dropdown-menu slot="dropdown" class="menu">
             <el-row>
-              <el-col :span="2">&emsp;&emsp;</el-col>
-              <el-col v-for="item in menus" :key='item.nub' class="wd2" :span="4">
+              <el-col :span="2">&ensp;</el-col>
+              <el-col v-for="item in menus1" :key='item.nub' class="wd2" :span="4">
                 <a :href="item.href" target="_blank">
-                  <el-dropdown-item>{{item.msg}}</el-dropdown-item>
+                  <el-dropdown-item>
+                    {{item.msg}}
+                  </el-dropdown-item>
+                </a>
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-col :span="2">&ensp;&ensp;</el-col>
+              <el-col v-for="item in menus2" :key='item.nub' class="wd2" :span="4">
+                <a :href="item.href" target="_blank">
+                  <el-dropdown-item>
+                    {{item.msg}}
+                  </el-dropdown-item>
                 </a>
               </el-col>
             </el-row>
@@ -30,7 +42,11 @@
       </el-col>
       <el-col :span="2" :offset="6">
         <a href="https://www.qq.com/" target="_blank">
-          <i class="el-icon-location-outline wd3">{{location}}{{temperature}}{{weather}}</i>
+          <i class="el-icon-location-outline wd3">
+            {{location}}
+            {{temperature}}
+            {{weather}}
+          </i>
         </a>
       </el-col>
       <el-col :span="4" class="search1">
@@ -46,7 +62,9 @@
       <el-col :span="2" class="log1">
         &emsp;
         <a href="https://www.qq.com/" target="_blank">
-          <button class="log2" href="https://www.qq.com/">一键登录</button>
+          <button class="log2" href="https://www.qq.com/">
+            一键登录
+          </button>
         </a>
       </el-col>
     </el-row>
@@ -95,7 +113,7 @@ export default {
           message: '时尚'
         }
       ],
-      menus:
+      menus1:
       [
         {
           nub: 1,
@@ -122,6 +140,34 @@ export default {
           msg: '社会',
           href: 'http://news.qq.com/'
         }
+      ],
+      menus2:
+      [
+        {
+          nub: 1,
+          msg: '房产',
+          href: 'http://news.qq.com/'
+        },
+        {
+          nub: 2,
+          msg: '汽车',
+          href: 'http://news.qq.com/'
+        },
+        {
+          nub: 3,
+          msg: '文化',
+          href: 'http://news.qq.com/'
+        },
+        {
+          nub: 4,
+          msg: '教育',
+          href: 'http://news.qq.com/'
+        },
+        {
+          nub: 5,
+          msg: '动漫',
+          href: 'http://news.qq.com/'
+        }
       ]
     }
   }
@@ -130,9 +176,9 @@ export default {
 
 <style scoped>
 .hr {
-width:100%;
-border-top: 1px solid rgba(212, 212, 212, 0.993);
-border-bottom: 1px solid rgba(203, 205, 206, 0.623);
+  width: 100%;
+  border-top: 1px solid rgba(212, 212, 212, 0.993);
+  border-bottom: 1px solid rgba(203, 205, 206, 0.623);
 }
 .mini {
   min-width: 1500px;
@@ -144,9 +190,9 @@ border-bottom: 1px solid rgba(203, 205, 206, 0.623);
   line-height: 24px;
   font-size: 13px;
   background-color: rgb(241, 243, 247);
-  border: 1px solid  rgb(96, 123, 247);
+  border: 1px solid rgb(96, 123, 247);
   color: rgb(96, 123, 247);
-  border-radius:5px;
+  border-radius: 5px;
 }
 .search1 {
   padding: 3px 0px;

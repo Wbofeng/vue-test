@@ -71,7 +71,8 @@
         <el-row style="font-size: 18px; padding-top: 50px;">
           {{t1}}
         </el-row>
-        <el-row v-for="text in texts" :key='text.nub' style="font-size: 18px; padding-top: 40px; line-height: 40px;">
+        <el-row v-for="text in texts" :key='text.nub'
+        style="font-size: 18px; padding-top: 40px; line-height: 40px;">
           {{text.msg}}
         </el-row>
       </el-col>
@@ -177,31 +178,24 @@ export default {
 </script>
 
 <style scoped>
-.el-main {
-    background-color: rgb(239, 248, 115);
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-    height: 2000px;
-}
-.wd{
+.wd {
   text-align: center;
 }
-.wd1{
+.wd1 {
   padding-left: 2px;
   font-size: 16px;
 }
-.hr{
+.hr {
   padding-top: 3px;
 }
-.long{
+.long {
   width: 1px;
   height: 750px;
   border-top: 1px solid rgba(252, 250, 250, 0.993);
   border-bottom: 1px solid rgb(255, 255, 255);
   border-right: 1px solid rgba(252, 250, 250, 0.993);
 }
-.wd2{
+.wd2 {
   font-size: 30px;
   text-align: center;
 }
@@ -213,19 +207,19 @@ export default {
   font-size: 16px;
   text-align: center;
 }
-.wd5{
+.wd5 {
   font-size: 15px;
   line-height: 10px;
   text-decoration: none;
   color: #333
 }
-.shape1{
+.shape1 {
   text-align: center;
   font-size: 30px;
   padding-right: 5px;
   color: rgba(180, 182, 184, 0.425)
 }
-.shape2{
+.shape2 {
   text-align: center;
   font-size: 60px;
   padding-right: 5px;

@@ -6,6 +6,7 @@
 
 <script>
 import sedMain from '../../components/sed_components/sedMain.vue'
+
 export default {
   components: {
     sedMain
