@@ -6,7 +6,7 @@
           <a v-for="item in impNews" :href="item.msg" :key='item.nub' target="_blank" class="word2 w1">{{item.message}}<br></a>
         </el-tab-pane>
         <el-tab-pane label="河北新闻" name="second" class="word1">
-          <a v-for="item in hbNews" :href="item.msg" :key='item.nub' target="_blank" class="word2 w1">{{item.message}}<br></a>
+          <a v-for="item in hbNews" v-bind="item" href="msg" :key='item.nub' target="_blank" class="word2 w1">{{item.message}}<br></a>
         </el-tab-pane>
       </el-tabs>
     </el-col>
@@ -170,6 +170,7 @@ export default {
 .word1 {
   line-height: 20px;
   padding: 0 0px;
+  text-align: left;
 }
 .word2 {
   font-size: 15px;
@@ -178,7 +179,7 @@ export default {
   padding: 0 0px;
 }
 .word3 {
-  line-height: 40px;
+  line-height: 5px !important;
   height: 60px;
 }
 .word4 {
@@ -186,7 +187,6 @@ export default {
 }
 .word5 {
   font-size: 15px;
-  line-height: 25px !important;
   padding: 0 0px;
 }
 .pictureBlue {

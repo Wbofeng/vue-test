@@ -49,6 +49,8 @@ export default {
     background-color: rgb(251, 253, 255);
     color: #333;
     height: 227px;
+    line-height: 25px;
+    text-align: left !important;
   }
   .el-main {
     background-color: rgb(251, 253, 255);

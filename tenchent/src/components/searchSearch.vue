@@ -1,7 +1,12 @@
 <template>
   <div style="margin-top: 15px;">
     <el-row>
-      <el-col :span="7" :offset="8">
+      <el-col :span="2" :offset="3">
+        <a href="http://www.qq.com/" target="_blank" class="word3 w1">
+          <img src="../assets/qq_logo.png" class="image" stretch>
+        </a>
+      </el-col>
+      <el-col :span="7" :offset="3">
         <el-input placeholder="" v-model="input1" class="input-with-select" size="small">
           <el-select v-model="select" slot="prepend" placeholder="网页" trigger="hover" class=".el-select">
             <el-option label="网页" value="2"></el-option>
@@ -45,6 +50,11 @@ export default {
 </script>
 
 <style scoped>
+.image {
+  width: 85%;
+  height: 85%;
+  padding: 10px 0px;
+}
 .el-select {
   width: 80px !important;
   line-height: 0px !important;

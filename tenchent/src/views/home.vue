@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link to="homeSed">888</router-link>
     <search></search>
     <middle></middle>
     <down></down>
