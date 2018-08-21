@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import lastHeader from '../components/lastHeader.vue'
-import lastMain from '../components/lastMain.vue'
-import lastFooter from '../components/lastFooter.vue'
+import lastHeader from '../../components/first_web/lastHeader.vue'
+import lastMain from '../../components/first_web/lastMain.vue'
+import lastFooter from '../../components/first_web/lastFooter.vue'
 
 export default {
   components: {

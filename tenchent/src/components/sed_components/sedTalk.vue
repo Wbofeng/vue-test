@@ -6,7 +6,7 @@
         <el-col :span="4" style="font-size: 25px;">网友评论</el-col>
         <el-col :span="12" style="padding-top: 10px;">
           文明上网理性发言，请遵守
-          <a href="http://news.qq.com/" class="wd1">
+          <a href="http://news.qq.com/" class="agreement">
             新闻评论服务协议
           </a>
         </el-col>
@@ -37,13 +37,13 @@
           </a>
         </el-col>
         <el-col :span="16">
-          <el-row>
-            <a :href="item.href" target="_blank" class="wd2">
+          <el-row style="padding: 0px 20px;">
+            <a :href="item.href" target="_blank" class="title">
               {{item.msg}}
             </a>
           </el-row>
-          <el-row class="wd3">
-            <a :href="item.href" target="_blank" class="sour">
+          <el-row class="author_border">
+            <a :href="item.href" target="_blank" class="author">
               {{item.source}}
             </a>
             {{item.time}}前
@@ -113,17 +113,16 @@ export default {
 </script>
 
 <style scoped>
-.wd1 {
+.agreement {
   text-decoration: none;
   color: black;
 }
-.wd2 {
+.title {
   text-decoration: none;
   font-size: 20px;
-  padding: 0px 20px;
   color: black;
 }
-.wd3 {
+.author_border {
   padding-top: 90px;
   padding-left: 20px;
   color: rgb(119, 118, 118);
@@ -133,34 +132,36 @@ export default {
   color: rgb(83, 112, 243);
 }
 .comment {
-  padding-top: 20px;
-  width: 640px;
-  height: 100px;
+  padding-top: 40px;
+  padding-bottom: 0px;
+  width: 645px;
+  text-align: left;
 }
 .log {
-  height: 100 !important;
+  height: 70 !important;
   width: 80 !important;
-  background-color: rgb(83, 112, 243);
   font-size: 20px;
-  line-height: 90px;
-  border-color: rgb(83, 112, 243);
+  line-height: 85px;
   padding: 3px 30px;
+  border-radius: 4px;
+  border-color: rgb(83, 112, 243);
+  background-color: rgb(83, 112, 243);
   color: rgb(253, 251, 251);
 }
 .recommend {
-  border-color: rgb(83, 112, 243);
-  color: rgb(247, 248, 252);
-  background-color: rgb(83, 112, 243);
   width: 100px;
   line-height: 20px;
   padding: 20px 20px;
   font-size: 15px;
+  border-color: rgb(83, 112, 243);
+  color: rgb(247, 248, 252);
+  background-color: rgb(83, 112, 243);
 }
 .picture {
   height: 138.45px;
   width: 100%;
 }
-.sour {
+.author {
   text-decoration: none;
   color: black;
 }

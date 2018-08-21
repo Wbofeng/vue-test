@@ -5,7 +5,7 @@
         <el-row>
           <el-col :span="8" class="picture1">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-            <img src="../assets/巴菲特 喝可乐.png" class="pictureBlue" stretch></a>
+            <img src="../../assets/巴菲特 喝可乐.png" class="pictureBlue" stretch></a>
           </el-col>
           <el-col :span="16" class="word1">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word1 w1">吃着苹果喝着可乐，股神巴菲特又赚翻了</a>
@@ -26,14 +26,14 @@
         <el-row class="word4">
           <el-col :span="12">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-              <img src="../assets/探访尘肺农民.png" class="picture2" >
+              <img src="../../assets/探访尘肺农民.png" class="picture2" >
             </a>
             <br>
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="w1">袁立探访尘肺病农民家庭</a>
           </el-col>
           <el-col :span="12">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-              <img src="../assets/出门小帅哥.png" class="picture2" >
+              <img src="../../assets/出门小帅哥.png" class="picture2" >
             </a>
             <br>
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="w1">他们外出时竟然带这些</a>
@@ -100,7 +100,7 @@
         </el-col>
         <el-col :span="6" :offset="1" class="tab7">
           <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-            <img src="../assets/白羊.png" class="picture4" >
+            <img src="../../assets/白羊.png" class="picture4" >
           </a>
         </el-col>
         <el-col :span="15" :offset="2" class="tab6">
@@ -196,7 +196,7 @@ export default {
           label: '上证',
           name: 'first',
           href: 'https://news.qq.com/a/20180805/008163.htm',
-          img: require('../assets/股票.png'),
+          img: require('../../assets/股票.png'),
           msg: '上证指数',
           data: '2779.37',
           rase: '+74.22 +2.74%'
@@ -206,7 +206,7 @@ export default {
           label: '恒指',
           name: 'second',
           href: 'https://news.qq.com/a/20180805/008163.htm',
-          img: require('../assets/股票.png'),
+          img: require('../../assets/股票.png'),
           msg: '恒生指数',
           data: '28248.881',
           rase: '+429.322 +1.54%'
@@ -216,7 +216,7 @@ export default {
           label: '道指',
           name: 'third',
           href: 'https://news.qq.com/a/20180805/008163.htm',
-          img: require('../assets/股票.png'),
+          img: require('../../assets/股票.png'),
           msg: '道琼斯',
           data: '25502.18',
           rase: '+39.60 +0.16%'
@@ -226,7 +226,7 @@ export default {
           label: '腾安',
           name: 'four',
           href: 'https://news.qq.com/a/20180805/008163.htm',
-          img: require('../assets/股票.png'),
+          img: require('../../assets/股票.png'),
           msg: '腾讯济安',
           data: '1999.83',
           rase: '+55.41 +2.85%'

@@ -21,7 +21,7 @@
         </el-col>
         <el-col :span="5" :offset="2">
           <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3">
-          <img src="../assets/时光蓝画轴.png" class="pictureBlue" stretch></a>
+          <img src="../../assets/时光蓝画轴.png" class="pictureBlue" stretch></a>
         </el-col>
       </el-row>
       <a v-for="item in items" :href="item.msg" :key='item.nub' target="_blank" class="word5 w1">{{item.message}}<br></a>

@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import downheader from '../components/downHeader.vue'
-import downMain from '../components/downMain.vue'
-import downFooter from '../components/downFooter.vue'
+import downheader from '../../components/first_web/downHeader.vue'
+import downMain from '../../components/first_web/downMain.vue'
+import downFooter from '../../components/first_web/downFooter.vue'
 
 export default {
   components: {

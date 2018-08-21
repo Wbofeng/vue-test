@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="14" :offset="3">
         <el-button plain class="button" size="small">
-          <img src="../assets/时光画轴.png" class="image" stretch>
+          <img src="../../assets/时光画轴.png" class="image" stretch>
         </el-button>
       </el-col>
       <el-col :span="4" :offset="0">
@@ -29,17 +29,17 @@ export default {
         {
           nub: 1,
           href: 'https://news.qq.com/a/20180805/008163.htm',
-          img: require('../assets/有害信息举报1.png')
+          img: require('../../assets/有害信息举报1.png')
         },
         {
           nub: 2,
           href: 'https://news.qq.com/a/20180805/008163.htm',
-          img: require('../assets/有害信息举报2.png')
+          img: require('../../assets/有害信息举报2.png')
         },
         {
           nub: 3,
           href: 'https://news.qq.com/a/20180805/008163.htm',
-          img: require('../assets/有害信息举报2.png')
+          img: require('../../assets/有害信息举报2.png')
         }
       ]
     }

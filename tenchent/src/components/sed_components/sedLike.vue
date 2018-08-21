@@ -1,11 +1,11 @@
 <template>
   <el-row>
-    <el-col :span="24" class="wd1">
+    <el-col :span="24" class="text_end">
       <i class="el-icon-minus"></i>
       THE END
       <i class="el-icon-minus"></i>
     </el-col>
-    <el-col :span="24" class="wd2">
+    <el-col :span="24" class="statement">
       {{msg}}
     </el-col>
     <el-col :span="24" style="text-align: center;">
@@ -14,10 +14,10 @@
       </a>
     </el-col>
     <el-col :span="2" :offset="11" style="text-align: center;">
-      <a href="http://news.qq.com/" class="wd3">赞</a>
+      <a href="http://news.qq.com/" class="collection">赞</a>
     </el-col>
     <el-col :span="2" :offset="3">
-      <a href="http://news.qq.com/" class="wd3">
+      <a href="http://news.qq.com/" class="collection">
         <i class="el-icon-news"></i>
         收藏
       </a>
@@ -36,17 +36,17 @@ export default {
 </script>
 
 <style scoped>
-.wd1 {
+.text_end {
   text-align: center;
   padding-top: 100px;
   font-size: 20px;
 }
-.wd2 {
+.statement {
   text-align: center;
   padding-top: 20px;
   font-size: 12px;
 }
-.wd3 {
+.collection {
   text-decoration: none;
   padding-top: 10px;
   font-size: 14px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="mini">
+  <div>
     <el-row class="row">
       <el-col :span="3">
         <a href="https://www.qq.com/" target="_blank">
@@ -7,19 +7,19 @@
         </a>
       </el-col>
       <el-col :span="5" class="compose">
-        <a v-for="item in items" :key='item.nub' :href="item.msg" target="_blank" class="wd1">
+        <a v-for="item in items" :key='item.nub' :href="item.msg" target="_blank" class="tab">
           {{item.message}}&emsp;
         </a>
       </el-col>
       <el-col :span="2">
         <el-dropdown class="drop">
           <span class="el-dropdown-link">
-            <i class="el-icon-menu shape"></i>
+            <i class="el-icon-menu hover"></i>
           </span>
           <el-dropdown-menu slot="dropdown" class="menu">
             <el-row>
               <el-col :span="2">&ensp;</el-col>
-              <el-col v-for="item in menus1" :key='item.nub' class="wd2" :span="4">
+              <el-col v-for="item in menus_fir" :key='item.nub' :span="4">
                 <a :href="item.href" target="_blank">
                   <el-dropdown-item>
                     {{item.msg}}
@@ -29,7 +29,7 @@
             </el-row>
             <el-row>
               <el-col :span="2">&ensp;&ensp;</el-col>
-              <el-col v-for="item in menus2" :key='item.nub' class="wd2" :span="4">
+              <el-col v-for="item in menus_scd" :key='item.nub' :span="4">
                 <a :href="item.href" target="_blank">
                   <el-dropdown-item>
                     {{item.msg}}
@@ -42,27 +42,27 @@
       </el-col>
       <el-col :span="2" :offset="6">
         <a href="https://www.qq.com/" target="_blank">
-          <i class="el-icon-location-outline wd3">
+          <i class="el-icon-location-outline weather">
             {{location}}
             {{temperature}}
             {{weather}}
           </i>
         </a>
       </el-col>
-      <el-col :span="4" class="search1">
+      <el-col :span="4" class="search_background">
         <el-col :span="21">
-          <input v-model="newInput" class="search2" placeholder=" 光明网">
+          <input v-model="newInput" class="search_content" placeholder=" 光明网">
         </el-col>
         <el-col :span="3">
           <a href="https://www.qq.com/" target="_blank">
-            <button class="el-icon-search search3" href="https://www.qq.com/"></button>
+            <button class="el-icon-search search_btn" href="https://www.qq.com/"></button>
           </a>
         </el-col>
       </el-col>
-      <el-col :span="2" class="log1">
+      <el-col :span="2" class="log_border">
         &emsp;
         <a href="https://www.qq.com/" target="_blank">
-          <button class="log2" href="https://www.qq.com/">
+          <button class="log_btn" href="https://www.qq.com/">
             一键登录
           </button>
         </a>
@@ -113,7 +113,7 @@ export default {
           message: '时尚'
         }
       ],
-      menus1:
+      menus_fir:
       [
         {
           nub: 1,
@@ -141,7 +141,7 @@ export default {
           href: 'http://news.qq.com/'
         }
       ],
-      menus2:
+      menus_scd:
       [
         {
           nub: 1,
@@ -180,13 +180,10 @@ export default {
   border-top: 1px solid rgba(212, 212, 212, 0.993);
   border-bottom: 1px solid rgba(203, 205, 206, 0.623);
 }
-.mini {
-  min-width: 1500px;
-}
-.log1 {
+.log_border {
   padding: 3px 5px;
 }
-.log2 {
+.log_btn {
   line-height: 24px;
   font-size: 13px;
   background-color: rgb(241, 243, 247);
@@ -194,13 +191,13 @@ export default {
   color: rgb(96, 123, 247);
   border-radius: 5px;
 }
-.search1 {
+.search_background {
   padding: 3px 0px;
   background-color: rgb(155, 158, 158);
   border: 2px solid rgb(155, 158, 158);
   border-radius:5px;
 }
-.search2 {
+.search_content {
   width: 200px;
   font-size: 15px;
   border-top-left-radius: 10px;
@@ -208,12 +205,12 @@ export default {
   border: 2px solid rgb(155, 158, 158);
   background-color:rgb(155, 158, 158);
 }
-.search3 {
+.search_btn {
   height: 22px;
   background-color: rgb(155, 158, 158);
   border: 0.1px solid rgb(155, 158, 158);
 }
-.shape {
+.hover {
   padding: 10px 0px;
   font-size: 17px;
 }
@@ -226,16 +223,13 @@ export default {
 .row {
   padding: 5px 20px;
 }
-.wd1 {
+.tab {
   line-height: 40px;
   text-decoration: none !important;
   color: black;
   font-size: 14px;
 }
-.wd2 {
-  padding: 0 0px;
-}
-.wd3 {
+.weather {
   line-height: 40px;
   font-size: 12px;
   text-align: right;

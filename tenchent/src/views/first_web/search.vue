@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import searchSearch from '../components/searchSearch.vue'
-import searchSearch2 from '../components/searchSearch2.vue'
+import searchSearch from '../../components/first_web/searchSearch.vue'
+import searchSearch2 from '../../components/first_web/searchSearch2.vue'
 
 export default{
   components: {

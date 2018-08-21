@@ -1,78 +1,68 @@
 <template>
   <div>
     <el-row>
+      <el-col :span="16" :offset="2" class="title">
+        {{title}}
+      </el-col>
+    </el-row>
+    <el-row>
       <el-col :span="2" :offset="2">
         <br>
         <el-row>
           <el-col :span="6" :offset="2" class="hr"><hr></el-col>
-          <el-col :span="8" class="wd1">{{year}}</el-col>
+          <el-col :span="8" class="year">{{year}}</el-col>
           <el-col :span="6" class="hr"><hr></el-col>
         </el-row>
         <br>
-        <el-row class="wd2">
+        <el-row class="day">
           <el-col :span="24">
             {{month}}/{{day}}
           </el-col>
         </el-row>
         <br>
         <el-cow>
-          <el-col :span="24" class="w3">
+          <el-col :span="24" class="hour">
             {{hour}}:{{min}}
           </el-col>
         </el-cow>
-        <br><br><br><br>
         <el-row>
-          <el-col :span="24" class="w3">
+          <el-col :span="24" class="light_web">
             光明网
           </el-col>
         </el-row>
-        <br><br><br><br><br><br><br><br>
-        <el-row>
+        <el-row style="padding-bottom: 20px;">
           <el-col :span="6" :offset="2" class="hr"><hr></el-col>
-          <el-col :span="7" class="wd4">分享</el-col>
+          <el-col :span="7" class="share">分享</el-col>
           <el-col :span="6" class="hr"><hr></el-col>
         </el-row>
-        <br><br>
-        <el-row>
-          <el-col :span="24" class="shape1">
-            <a href="http://news.qq.com/">
-              <i class="el-icon-star-off shape1"></i>
-            </a>
-          </el-col>
-          <el-col :span="24" class="shape1">
-            <a href="http://news.qq.com/">
-              <i class="el-icon-share shape1"></i>
-            </a>
-          </el-col>
-          <el-col :span="24" class="shape1">
-            <a href="http://news.qq.com/">
-              <i class="el-icon-info shape1"></i>
+        <el-row style="padding-bottom: 60px;">
+          <el-col v-for="item in items" :key="item.nub" :span="24" class="share_icon">
+            <a :href="item.href" target="_blank">
+              <i class="share_icon" :class="item.class"></i>
             </a>
           </el-col>
         </el-row>
-        <br><br>
         <el-row>
           <el-col :span="6" :offset="2" class="hr"><hr></el-col>
-          <el-col :span="7" class="wd4">评论</el-col>
+          <el-col :span="7">评论</el-col>
           <el-col :span="6" class="hr"><hr></el-col>
         </el-row>
         <el-row>
-          <el-col :span="24" class="shape2">
+          <el-col :span="24" class="talk">
             <a href="http://news.qq.com/">
-              <i class="el-icon-edit-outline shape2"></i>
+              <i class="el-icon-edit-outline talk"></i>
             </a>
           </el-col>
         </el-row>
       </el-col>
       <el-col :span="1">
-        <hr class="long">
+        <hr class="long_line">
       </el-col>
       <el-col :span="12">
-        <el-row style="font-size: 18px; padding-top: 50px;">
-          {{t1}}
+        <el-row class="author">
+          {{author}}
         </el-row>
-        <el-row v-for="text in texts" :key='text.nub'
-        style="font-size: 18px; padding-top: 40px; line-height: 40px;">
+        <el-row v-for="text in texts" :key='text.nub' class="main_text">
           {{text.msg}}
         </el-row>
       </el-col>
@@ -89,7 +79,7 @@
         </el-row>
         <el-row>
           <el-col v-for="recommend in recomends" :key="recommend.nub">
-            <a href="recommend.href"  target="_blank" class="wd5">
+            <a href="recommend.href"  target="_blank" class="news">
               <img :src="recommend.img" class="picture"><br>
               {{recommend.msg}}
             </a>
@@ -104,12 +94,31 @@
 export default {
   data () {
     return {
+      title: '现实版“小偷家族”：当始终怀有对民生疾苦的敏感',
       year: '2018',
       month: '08',
       day: '10',
       hour: '09',
       min: '04',
-      t1: '光明网评论员',
+      author: '光明网评论员',
+      items:
+      [
+        {
+          nub: 1,
+          href: 'http://news.qq.com/',
+          class: 'el-icon-star-off'
+        },
+        {
+          nub: 2,
+          href: 'http://news.qq.com/',
+          class: 'el-icon-share'
+        },
+        {
+          nub: 3,
+          href: 'http://news.qq.com/',
+          class: 'el-icon-info'
+        }
+      ],
       texts:
       [
         {
@@ -178,48 +187,64 @@ export default {
 </script>
 
 <style scoped>
-.wd {
-  text-align: center;
+.title {
+  font-size: 40px;
+  padding-top: 30px;
 }
-.wd1 {
+.author {
+  font-size: 18px;
+  padding-top: 50px;
+}
+.main_text {
+  font-size: 18px;
+  padding-top: 40px;
+  line-height: 40px;
+}
+.year {
   padding-left: 2px;
   font-size: 16px;
 }
 .hr {
   padding-top: 3px;
 }
-.long {
+.long_line {
   width: 1px;
   height: 750px;
   border-top: 1px solid rgba(252, 250, 250, 0.993);
   border-bottom: 1px solid rgb(255, 255, 255);
   border-right: 1px solid rgba(252, 250, 250, 0.993);
 }
-.wd2 {
+.day {
   font-size: 30px;
   text-align: center;
 }
-.w3 {
+.hour {
   text-align: center;
   font-size: 16px;
+  padding-bottom: 60px;
 }
-.wd4 {
+.light_web {
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 150px;
+}
+.share {
   font-size: 16px;
   text-align: center;
 }
-.wd5 {
+.news {
   font-size: 15px;
   line-height: 10px;
   text-decoration: none;
   color: #333
 }
-.shape1 {
+.share_icon {
   text-align: center;
   font-size: 30px;
   padding-right: 5px;
   color: rgba(180, 182, 184, 0.425)
 }
-.shape2 {
+.talk {
   text-align: center;
   font-size: 60px;
   padding-right: 5px;

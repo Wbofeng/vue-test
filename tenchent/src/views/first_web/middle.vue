@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import middleHeader from '../components/middleHeader.vue'
-import middleAside from '../components/middleAside.vue'
-import middlemain from '../components/middlemain.vue'
+import middleHeader from '../../components/first_web/middleHeader.vue'
+import middleAside from '../../components/first_web/middleAside.vue'
+import middlemain from '../../components/first_web/middlemain.vue'
 
 export default {
   components: {

@@ -5,7 +5,7 @@
         <el-row>
           <el-col :span="7">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3 w1">
-              <img src="../assets/人民币.png" class="pictureBlue" stretch>
+              <img src="../../assets/人民币.png" class="pictureBlue" stretch>
             </a>
           </el-col>
           <el-col :span="12">
@@ -29,7 +29,7 @@
               <el-col :span="12">
                 <div>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3 w1">
-                    <img src="../assets/总统.png" class="picture" stretch>
+                    <img src="../../assets/总统.png" class="picture" stretch>
                   </a>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word4 w1"> 燃！各军集结：使命不怠 百炼成军</a><br>
                 </div>
@@ -37,7 +37,7 @@
               <el-col :span="12">
                 <div>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3 w1">
-                    <img src="../assets/总统.png" class="picture" stretch>
+                    <img src="../../assets/总统.png" class="picture" stretch>
                   </a>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word4 w1"> 燃！各军集结：使命不怠 百炼成军</a><br>
                 </div>
@@ -77,7 +77,7 @@
               <el-col :span="12">
                 <div>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3 w1">
-                    <img src="../assets/总统.png" class="picture" stretch>
+                    <img src="../../assets/总统.png" class="picture" stretch>
                   </a>
                   <br>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word4 w1">猛虫过江：爆笑喜剧</a><br>
@@ -86,7 +86,7 @@
               <el-col :span="12">
                 <div>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3 w1">
-                    <img src="../assets/总统.png" class="picture" stretch>
+                    <img src="../../assets/总统.png" class="picture" stretch>
                   </a>
                   <br>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word4 w1">《扶摇》好剧全网独播</a><br>
@@ -184,7 +184,7 @@
               <el-col :span="12">
                 <div>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3 w1">
-                    <img src="../assets/总统.png" class="picture" stretch>
+                    <img src="../../assets/总统.png" class="picture" stretch>
                   </a>
                   <br>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word4 w1">斯外戈秀炸裂舞技</a><br>
@@ -193,7 +193,7 @@
               <el-col :span="12">
                 <div>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3 w1">
-                    <img src="../assets/总统.png" class="picture" stretch>
+                    <img src="../../assets/总统.png" class="picture" stretch>
                   </a>
                   <br>
                   <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word4 w1">萧敬腾花式表白王菲</a><br>
@@ -307,7 +307,7 @@
     <el-col :span="4">
       <div class="grid-content bg-purple w1">
         <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="word3">
-          <img src="../assets/时光船画轴.png" class="pictureYellow" stretch>
+          <img src="../../assets/时光船画轴.png" class="pictureYellow" stretch>
         </a>
       </div>
     </el-col>

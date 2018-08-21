@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="2" :offset="3">
         <a href="http://www.qq.com/" target="_blank" class="word3 w1">
-          <img src="../assets/qq_logo.png" class="image" stretch>
+          <img src="../../assets/qq_logo.png" class="image" stretch>
         </a>
       </el-col>
       <el-col :span="7" :offset="3">

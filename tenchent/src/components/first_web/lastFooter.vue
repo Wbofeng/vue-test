@@ -14,11 +14,11 @@
           </div>
           <el-col :span="3">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-            <img src="../assets/可信网站身份验证.png" class="pic1" stretch></a>
+            <img src="../../assets/可信网站身份验证.png" class="pic1" stretch></a>
           </el-col>
           <el-col :span="1">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank">
-            <img src="../assets/工商网监电子标识.png" class="pic" stretch></a>
+            <img src="../../assets/工商网监电子标识.png" class="pic" stretch></a>
           </el-col>
           <el-col :span="2" class="w2">
             <a href="https://news.qq.com/a/20180805/008163.htm" target="_blank" class="w2">工商网监电子标识</a>
@@ -39,19 +39,19 @@ export default {
           nub: 1,
           href: 'https://news.qq.com/a/20180805/008163.htm',
           msg: '经营性网站备案信息',
-          img: require('../assets/经营性网站备案信息.png')
+          img: require('../../assets/经营性网站备案信息.png')
         },
         {
           nub: 2,
           href: 'https://news.qq.com/a/20180805/008163.htm',
           msg: '中国互联网举报中心',
-          img: require('../assets/中国互联网举报中心.png')
+          img: require('../../assets/中国互联网举报中心.png')
         },
         {
           nub: 3,
           href: 'https://news.qq.com/a/20180805/008163.htm',
           msg: '中国文明网传播文明',
-          img: require('../assets/中国文明网传播文明.png')
+          img: require('../../assets/中国文明网传播文明.png')
         }
       ]
     }

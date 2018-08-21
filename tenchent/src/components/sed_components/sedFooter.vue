@@ -1,24 +1,24 @@
 <template>
   <el-row>
-    <el-col :span="24" class="col">
-      <a v-for="item in items" :key="item.nub" :href="item.href" class="wd1">
+    <el-col :span="24" class="col_first">
+      <a v-for="item in items" :key="item.nub" :href="item.href" class="wd">
         {{item.msg}}&ensp;|
       </a>
-      <a href="last.href" class="wd1">
+      <a href="last.href" class="wd">
         {{last.msg}}
       </a>
     </el-col>
-    <el-col :span="24" class="col2">
-      <a class="wd1">
+    <el-col :span="24" class="col_scd">
+      <a class="wd">
         Copyright © 1998 - 2018 Tencent. All Rights Reserved
       </a>
     </el-col>
-    <el-col :span="24" class="col2">
-      <a href="copyRight1.href" class="wd1">
-        {{copyRight1.text}}
+    <el-col :span="24" class="col_scd">
+      <a href="copyRight_first.href" class="wd">
+        {{copyRight_first.text}}
       </a>
-      <a href="copyRight2.href" class="wd1">
-        {{copyRight2.text}}
+      <a href="copyRight_scd.href" class="wd">
+        {{copyRight_scd.text}}
       </a>
     </el-col>
   </el-row>
@@ -86,12 +86,12 @@ export default {
         msg: '网站导航',
         href: 'https://www.qq.com/'
       },
-      copyRight1:
+      copyRight_first:
       {
         text: '腾讯公司',
         href: 'https://www.qq.com/'
       },
-      copyRight2:
+      copyRight_scd:
       {
         text: '版权所有',
         href: 'https://www.qq.com/'
@@ -102,15 +102,15 @@ export default {
 </script>
 
 <style scoped>
-.col {
+.col_first {
   padding-top: 50px;
   text-align: center;
 }
-.col2 {
+.col_scd {
   padding-top: 10px;
   text-align: center;
 }
-.wd1 {
+.wd {
   text-decoration: none;
   color: rgb(119, 119, 119);
   font-size: 12px;
