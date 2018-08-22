@@ -42,13 +42,20 @@
                 <a href="#">更多 ></a>
             </h2>
         </div>
+        <div class="swiper">
+            <centerswiper></centerswiper>
+        </div>
     </div>
 </div>
 </template>
 
 <script>
+import centerswiper from '../components/centerSwiper.vue'
 
 export default {
+  components: {
+    centerswiper
+  },
   data () {
     return {
       items: [
@@ -194,7 +201,7 @@ export default {
     line-height: 1.5em;
 }
 .section1 .newsli p {
-    padding: 11px 40px;
+    padding: 26px 40px;
     color:black;
 }
 .section1 .newswrap {
@@ -289,5 +296,9 @@ export default {
     color: #fff;
     text-align: center;
     opacity: 0.5
+}
+.content {
+    position: relative;
+    z-index: 0;
 }
 </style>

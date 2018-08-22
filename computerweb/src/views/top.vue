@@ -1,18 +1,21 @@
 <template>
-<div class="navwrapper">
+<div class="top">
   <div class="topline"></div>
-  <div class="logo">
-    <a href="#">
-      <img src="../../public/images/logo_1.svg">
-    </a>
-  </div>
-  <div class="nav">
-    <div class="mainnav clearfix">
+  <div class="navwrapper">
+    <div class="logo">
+      <a href="#">
+        <img src="../../public/images/logo_1.svg">
+      </a>
+    </div>
+    <div class="nav">
+      <div class="mainnav clearfix">
+      </div>
     </div>
   </div>
   <topswiper></topswiper>
 </div>
 </template>
+
 <script>
 import topswiper from '../components/topSwiper.vue'
 
@@ -23,6 +26,9 @@ export default{
 }
 </script>
 <style>
+.top {
+  position: relative;
+}
 .topline {
   height: 6px;
   background:linear-gradient(to right,#6510ad,#104fad)
@@ -35,8 +41,8 @@ export default{
   top:50px;
 }
 .navwrapper {
-  width: 100%;
   position: absolute;
+  width: 100%;
   z-index: 10;
 }
 .nav {
