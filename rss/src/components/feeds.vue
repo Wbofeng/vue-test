@@ -8,17 +8,18 @@
         <div v-for="(article, index) in articles" :key="index">
             <el-button class="articleBtn">
                 <div class="btn">
-                    <img src="../assets/logo.png" class="bigImg">
+                    <img :src="article.img" class="bigImg">
                     <div class="btnRight">
                         <h2>{{ article.title }}</h2>
+                        <div></div>
                         <div class="icons">
-                            <img src="../assets/logo.png" class="icon">
+                            <img src="../assets/bookmark.png" class="icon">
                             <div>
-                                <img src="../assets/logo.png" class="icon">
+                                <img src="../assets/share.png" class="icon">
                                 <span class="">WEBSITE</span>
                             </div>
                             <div>
-                                <img src="../assets/logo.png" class="icon">
+                                <img src="../assets/comment.png" class="icon">
                                 <span>COMMENTS</span>
                             </div>
                             <span class="time">{{ article.time }}</span>
@@ -31,12 +32,13 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 .title {
     margin: 1.7em 0;
     display: flex;
     align-items: center
 }
+
 .titleImg {
     width: 50px;
     height: 50px;
@@ -44,25 +46,30 @@
     border:black 1px;
     border-radius: 8px
 }
+
 .followBtn {
     font-size: 0.6em;
     margin-left: auto;
     margin-right: 0
 }
+
 .webTitle {
     text-align: left;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px
 }
+
 .articleBtn {
     width:100%;
-    border-color: transparent;
+    border-color: transparent
 }
+
 .btn {
     width: 100%;
     display: flex
 }
+
 .bigImg {
     border: black solid;
     border-radius: 8px;
@@ -70,9 +77,11 @@
     width: 75px;
     margin-right: 2em
 }
+
 .btnRight {
-    text-align: left;
+    text-align: left
 }
+
 h2 {
     font-weight: 500;
     overflow: hidden;
@@ -80,22 +89,25 @@ h2 {
     font-size: 1.5em;
     margin: 0
 }
+
 .icons {
     margin-bottom: 1em;
     margin-top: 1em;
     display: flex;
     align-items: center
 }
+
 .icon {
     width: 15px;
     height: 15px;
-    border: black solid;
     border-radius: 5px;
     margin-left: 1em
 }
+
 .time {
     margin-left: 1em
 }
+
 h3{
     margin: 0;
     overflow: hidden;
@@ -111,26 +123,31 @@ h3{
             return {
                 articles: [
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"
                     },
                     {
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "POSTED 4 HOURS AGO",
                         description: "the desciption of the passage"

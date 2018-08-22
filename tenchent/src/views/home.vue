@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="fix_width">
     <search></search>
     <middle></middle>
     <down></down>
@@ -8,10 +8,11 @@
 </template>
 
 <script>
-import search from '../views/search.vue'
-import middle from '../views/middle.vue'
-import down from '../views/down.vue'
-import last from '../views/last.vue'
+import search from '../views/first_web/search.vue'
+import middle from '../views/first_web/middle.vue'
+import down from '../views/first_web/down.vue'
+import last from '../views/first_web/last.vue'
+
 export default {
   components: {
     search,
@@ -22,6 +23,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.fix_width{
+  min-width: 1510px;
+}
 </style>

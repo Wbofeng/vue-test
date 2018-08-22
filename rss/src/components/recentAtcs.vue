@@ -4,14 +4,14 @@
         <div v-for="(suggestion, index) in suggestions" :key="index">
             <el-button class="articleBtn">
                 <div class="btn">
-                    <img src="../assets/logo.png" class="bigImg">
+                    <img :src="suggestion.img" class="bigImg">
                     <div class="point"></div>
                     <div class="btnRight">
                         <h2>{{ suggestion.title }}</h2>
                         <div class="icons">
-                            <img src="../assets/logo.png" class="icon">
+                            <img src="../assets/bookmark.png" @click="mark(suggestion)">
                             <div>
-                                <img src="../assets/logo.png" class="icon">
+                                <img src="../assets/share.png">
                                 <span class="">WEBSITE</span>
                             </div>
                             <span class="time">{{ suggestion.time }}</span>
@@ -26,39 +26,45 @@
 
 <style scoped>
 h1 {
-    text-align: left;
-
+    text-align: left
 }
+
 .title {
     margin: 1.7em 0;
     display: flex;
     align-items: center
 }
+
 .followBtn {
     font-size: 0.6em;
     margin-left: auto;
     margin-right: 0
 }
+
 .webTitle {
     text-align: left;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px
 }
+
 .articleBtn {
     width:100%;
     border-color: transparent
 }
+
 .btn {
     width: 100%;
     display: flex
 }
+
 .bigImg {
     border: black solid;
     border-radius: 8px;
     height: 75px;
     width: 75px
 }
+
 .point {
     border-radius: 50%;
     background-color: #44bc75;
@@ -66,9 +72,11 @@ h1 {
     height: 0.5em;
     margin-right: 2em
 }
+
 .btnRight {
     text-align: left
 }
+
 h2 {
     font-weight: 500;
     overflow: hidden;
@@ -76,23 +84,26 @@ h2 {
     font-size: 1.5em;
     margin: 0
 }
+
 .icons {
     margin-bottom: 1em;
     margin-top: 1em;
     display: flex;
     align-items: center
 }
-.icon {
+
+img {
     width: 15px;
     height: 15px;
-    border: black solid;
     border-radius: 5px;
     margin-left: 1em
 }
+
 .time {
     margin-left: 1em;
     color: #aaa
 }
+
 h3 {
     margin: 0;
     overflow: hidden;
@@ -103,37 +114,61 @@ h3 {
 </style>
 
 <script>
-    export default {
-        data() {
-            return {
-                suggestions: [
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    }
-                ]
-            }
+import eventBus from '../router/eventBus.js'
+
+export default {
+    data() {
+        return {
+            suggestions: [
+                {   
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                },
+                {
+                    img: require("../assets/logo.png"),
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    isMarked: false
+                }
+            ]
         }
+    },
+    methods: {
+        mark(sug) {
+            sug.isMarked = !sug.isMarked;
+            if(sug.isMarked) {
+                let {img, title, time } = sug;
+                var item = { img, title, time };
+                eventBus.$emit('addMark', item);
+            }else {
+                eventBus.$emit('deleteMark')
+            }
+        }          
     }
+}
 </script>
