@@ -1,6 +1,8 @@
 <template>
 <div class="body">
   <top></top>
+  <center></center>
+  <foot></foot>
 </div>
 </template>
 <script>
@@ -18,6 +20,12 @@ export default {
 </script>
 
 <style lang="less">
+img {
+  width: 100%;
+}
+button {
+  border: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,10 +61,11 @@ li {
   position: relative;
 }
 body {
-  margin: 0;
+  overflow-x: hidden;
+  max-width: 2560px;
+  margin: 0 auto;
   padding: 0;
   border: 0;
-  overflow-x: hidden;
   background: #E7EAEA;
 }
 a {

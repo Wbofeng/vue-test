@@ -1,18 +1,20 @@
 <template>
   <div class="top_swiper">
     <div class="top_swiper_main">
-      <ul class="top_swiper_img">
-        <transition-group name="fade">
-          <li v-for="(list,index) in lists" v-show="mark === index" :style="list.style" :key="index">
-            <a :href="list.href">
-              <p>{{list.p}}</p>
-            </a>
-          </li>
-        </transition-group>
-      </ul>
+      <transition-group class="top_swiper_img clearfix" name="fade" tag="ul">
+        <li v-for="(list,index) in lists" v-if="mark === index" :style="list.style" :key="index">
+          <a :href="list.href">
+            <p>{{list.p}}</p>
+          </a>
+        </li>
+      </transition-group>
       <ul class="top_swiper_button">
-        <li v-for="index in 3" :key="index" @click="mark = index-1,timer = null">
-          <button>{{index}}</button>
+        <li v-for="(list,index) in lists"
+            :key="index"
+            @mouseover="stop()"
+            @mouseout="play()"
+            @click="change(index)">
+          <button>{{index + 1}}</button>
         </li>
       </ul>
     </div>
@@ -47,15 +49,16 @@ export default {
   methods: {
     autoPlay () {
       this.mark++
-      if (this.mark === 3) {
-        this.mark = 0
-      }
+      this.mark = this.mark % 3
     },
     play () {
       this.timer = setInterval(this.autoPlay, 4000)
     },
     change (i) {
       this.mark = i
+    },
+    stop () {
+      clearInterval(this.timer)
     }
   },
   created () {
@@ -65,19 +68,40 @@ export default {
 </script>
 
 <style>
+.top_swiper_img {
+  height: 100%;
+  width: 4611px;
+}
 .top_swiper_button {
+  position: absolute;
+  left: 70px;
+  bottom: 220px;
+}
+.top_swiper_button li {
+  float: left;
   position: relative;
   z-index: 11;
 }
-.top_swiper {
-  width: 4777px;
+.top_swiper_button button {
+  font-size: 20px;
+  color: #fff;
+  background: none;
+  height: 50px;
+  width: 34px;
+  border-radius: 0;
 }
 .top_swiper a {
   width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.top_swiper .top_swiper_img li:nth-child(2) {
+  position: relative;
+  left: -1519px;
 }
 .top_swiper .top_swiper_img li {
-  position: absolute;
-  width: 100%;
+  float: left;
+  width: 1519px;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -94,14 +118,17 @@ export default {
   height: 100%;
 }
 .top_swiper p {
-    font-size: 40px;
-    color: #fff;
-    position: absolute;
-    bottom: 220px;
-    right: 100px;
-    line-height: 1.5em;
-    text-shadow: 2px 2px 0px #000;
-    text-align: right;
-    max-width: 70%;
+  font-size: 40px;
+  color: #fff;
+  position: absolute;
+  bottom: 220px;
+  right: 110px;
+  line-height: 1.5em;
+  text-shadow: 2px 2px 0px #000;
+  text-align: right;
+  max-width: 70%;
+}
+.top_swiper {
+  overflow: hidden;
 }
 </style>

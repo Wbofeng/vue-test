@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    methods:{
+    methods: {
       open() {
         this.$confirm('Welcome to Mi.com','Please select your country or region',{
           confirmButtonText:'Mainland China'
