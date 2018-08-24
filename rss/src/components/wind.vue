@@ -5,8 +5,8 @@
             <el-row :gutter="12">
                 <el-col :span="4" v-for="(card, index) in cards" :key="index" >
                     <el-card shadow="hover" class="background">
-                        <p class="abstract">{{ card.title }}</p>
-                        <h2>{{ card.abstract }}</h2>
+                        <p class="abstract">{{ card.variety }}</p>
+                        <h4>{{ card.title }}</h4>
                     </el-card>
                 </el-col>
             </el-row>
@@ -16,8 +16,8 @@
             <el-card class='podcasts' :span="8"> 
                 <el-button class="titleBtn">             
                     <el-row>
-                        <el-rol :span="4" class="title">Podcasts</el-rol>
-                        <el-rol :span="6" :offset="14">
+                        <el-rol :span="6" class="title">Podcasts</el-rol>
+                        <el-rol :span="6" :offset="12">
                             <label>View All</label>
                             <i class="el-icon-arrow-right"></i>
                         </el-rol>
@@ -65,7 +65,7 @@
                     <el-row :gutter="20">                     
                             <el-col v-for="(disCard, index) in disCards" :key="index" :span="8">
                                 <div>
-                                    <el-card  shadow="hover" class="background"></el-card>
+                                    <el-card  shadow="hover" class="discoverCard"></el-card>
                                     <span>{{ disCard.title }}</span>
                                 </div>
                             </el-col>                      
@@ -74,11 +74,9 @@
                         <el-button class="passageBtn">
                             <el-row>
                                 <el-col :span="2">
-                                    <img src="../assets/logo.png" class="passageImg">
+                                    <img src="../assets/logo.png" class="smallImg">
                                 </el-col>
-                                <el-col :span="16">
-                                    <span class="passageTitle">{{ discover.title }}</span>
-                                </el-col>                         
+                                <el-col :span="16" class="passageTitle">{{ discover.title }}</el-col>                         
                                 <el-col :span="4">View All</el-col>
                                 <el-col :span="1">
                                     <i class="el-icon-arrow-right"></i>
@@ -99,8 +97,17 @@
 }
 
 .abstract {
-    font-size: 16px;
-    margin-top: 0px
+    font-size: 14px;
+    margin-top: 0px;
+    font-weight: 600;
+}
+
+h4 {
+    display: inline-block;
+    width: 140px;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 20px;
 }
 
 .above {
@@ -147,18 +154,30 @@ titleRight {
 }
 
 .background {
+    /* background: linear-gradient(to top, black, transparent);     */
     background-image: url('../assets/logo.png');
     background-size: 100% 100%;
     text-align: left;
-    border-radius: 10px
+    border-radius: 10px;
+    height: 170px
 }
 
-.passageImg {
+.background:hover {
+    transform: scale(1.05);
+}
+
+.discoverCard {
+    background-image: url('../assets/logo.png');
+    background-size: 100% 100%;
+    text-align: left;
+    border-radius: 10px;
+    height: 100px
+}
+
+.smallImg {
     height: 100%;
     width: 15px;
-    border-radius: 5px;
-    border-color:black;
-    border-style: solid
+    border-radius: 5px
 }
 
 .refresh {
@@ -167,8 +186,12 @@ titleRight {
 }
 
 .passageTitle {
+    margin: 0;
     overflow: hidden;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
+    font-size: 1em;
+    color: black;
+    text-align: left
 }
 
 .viewAll {
@@ -189,181 +212,223 @@ titleRight {
            return {
                 cards: [
                    {
-                       title: '1',
-                       abstract: '11'
+                       variety: 'PODCAST',
+                       title: 'Invisibilia'
                    },
                    {
-                       title: '2',
-                       abstract: '11'
+                       variety: 'PODCAST',
+                       title: 'Smashing Magazine'
                    },
                    {
-                       title: '3',
-                       abstract: '11'
+                       variety: 'PODCAST',
+                       title: 'Shop Talk'
                    },
                    {
-                       title: '3',
-                       abstract: '11'
+                       variety: 'RSS',
+                       title: 'Codeburst'
                    },
                    {
-                       title: '3',
-                       abstract: '11'
+                       variety: 'RSS',
+                       title: 'Hacker Noon'
                    },
                    {
-                       title: '3',
-                       abstract: '11'
+                       variety: 'RSS',
+                       title: 'Design&Business'
                    }
                 ],
                 recentEpis: [
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     }
                 ],
                 podcasts: [
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" }
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title"
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title"
+                    },
+                    {
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    {
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    }
                 ],
                 recentAtcs: [
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     },
                     { 
+                        img: require("../assets/logo.png"),
                         title: "passage title",
                         time: "2 hours"
                     }
                 ],
                 feeds: [
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" },
-                    { title: "passage title" }
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title"
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title"
+                    },
+                    {
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    { 
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    },
+                    {
+                        img: require("../assets/logo.png"),
+                        title: "passage title" 
+                    }
                 ],
                 discovers: [
                     { title: "podCast title" },

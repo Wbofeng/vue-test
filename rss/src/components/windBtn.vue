@@ -2,14 +2,10 @@
     <el-button class='btn'>
         <el-row>
             <el-col :span="2">
-                <img src='../assets/logo.png'>
+                <img :src="item.img">
             </el-col>
-            <el-col :span="18">
-                <span class='title'>{{ item.title }}</span>
-            </el-col>
-            <el-col :span="4">
-                <span class='time'>{{ item.time }}</span>
-            </el-col>
+            <el-col :span="18" class='title'>{{ item.title }}</el-col>
+            <el-col :span="4" class='time'>{{ item.time }}</el-col>
         </el-row>
     </el-button>
 </template>
@@ -18,22 +14,24 @@
 .btn {
     border-color: transparent;
     width: 100%;
-    height: 40px
+    height: 40px;
+    margin-left: 0;
+    line-height: 20px;
+    vertical-align: center
 }
 
 img {
     height: 100%;
-    width: 15px;
-    border-radius: 5px;
-    border-color: black;
-    border-style: solid
+    width: 15px
 }
 
 .title {
+    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 1em;
-    color: black
+    color: black;
+    text-align: left
 }
 
 .time {

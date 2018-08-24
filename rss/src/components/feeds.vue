@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="title">
-            <img src="../assets/logo.png" class="titleImg">
-            <span class="webTitle">Website Name</span>
-            <el-button class="followBtn">Unfollow</el-button>
+            <img :src="activeItem.img" class="titleImg">
+            <span class="webTitle">{{activeItem.title}}</span>
+            <el-button class="followBtn" @click="change">Unfollow</el-button>
         </div>   
         <div v-for="(article, index) in articles" :key="index">
             <el-button class="articleBtn">
@@ -13,15 +13,11 @@
                         <h2>{{ article.title }}</h2>
                         <div></div>
                         <div class="icons">
-                            <img src="../assets/bookmark.png" class="icon">
-                            <div>
-                                <img src="../assets/share.png" class="icon">
-                                <span class="">WEBSITE</span>
-                            </div>
-                            <div>
-                                <img src="../assets/comment.png" class="icon">
-                                <span>COMMENTS</span>
-                            </div>
+                            <img src="../assets/bookmark.png" class="icon" @click="addBook(article)">
+                            <img src="../assets/share.png" class="icon">
+                            <span class="link">WEBSITE</span>
+                            <img src="../assets/comment.png" class="icon">
+                            <span class="link">COMMENTS</span>
                             <span class="time">{{ article.time }}</span>
                         </div>
                         <h3>{{ article.description }}</h3>
@@ -104,8 +100,17 @@ h2 {
     margin-left: 1em
 }
 
+.link {
+    color:#44bc75
+}
+
+.link:hover {
+    text-decoration: underline
+}
+
 .time {
-    margin-left: 1em
+    margin-left: 1em;
+    color: #aaa
 }
 
 h3{
@@ -118,42 +123,64 @@ h3{
 </style>
 
 <script>
-    export default {
-        data() {
-            return {
-                articles: [
-                    {
-                        img: require("../assets/logo.png"),
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        img: require("../assets/logo.png"),
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        img: require("../assets/logo.png"),
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        img: require("../assets/logo.png"),
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        img: require("../assets/logo.png"),
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    }
-                ]
-            }
+import { mapGetters } from 'vuex';
+
+export default {
+    data() {
+        return {
+            articles: [
+                {
+                    img: require("../assets/feedsImg1.jpg"),
+                    title: "Evolution of Android Security Updates",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage",
+                    id: 16
+                },
+                {
+                    img: require("../assets/feedsImg2.jpg"),
+                    title: "Streamlining the developer experience for instant games",
+                    time: "POSTED 5 HOURS AGO",
+                    description: "the desciption of the passage",
+                    id: 17
+                },
+                {
+                    img: require("../assets/feedsImg3.png"),
+                    title: "Alternative input methods for Android TV",
+                    time: "POSTED 6 HOURS AGO",
+                    description: "the desciption of the passage",
+                    id: 18
+                },
+                {
+                    img: require("../assets/feedsImg4.png"),
+                    title: "Streaming support spec for hearing aids on Android",
+                    time: "POSTED 7 HOURS AGO",
+                    description: "the desciption of the passage",
+                    id: 19
+                },
+                {
+                    img: require("../assets/feedsImg5.jpg"),
+                    title: "Updating Wear OS Google Play Store policy to increase app quality",
+                    time: "POSTED 8 HOURS AGO",
+                    description: "the desciption of the passage",
+                    id: 20
+                }
+            ]
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'activeItem'
+        ])
+    },
+    methods: {
+        addBook(article) {
+            let elem = {}
+            elem.img = article.img
+            elem.title = article.title
+            elem.time = article.time
+            elem.id = article.id
+            this.$store.commit('ADD_BOOK', elem)
         }
     }
+}
 </script>

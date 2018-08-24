@@ -1,25 +1,25 @@
 <template>
     <div>
         <div class="title">
-            <img src="../assets/logo.png" class="webImg">
-            <span class="webTitle">Website Name</span>
-            <el-button class="followBtn">follow</el-button>
-        </div>   
-        <div v-for="(suggestion, index) in suggestions" :key="index">
+            <img :src="website.img" class="webImg">
+            <span class="webTitle">{{ website.title }}</span>
+            <el-button class="followBtn" @click="followFeed(website)">{{ followState }}</el-button>
+        </div>
+        <div v-for="(item, index) in items" :key="index">
             <el-button class="articleBtn">
                 <div class="btn">
-                    <img :src="suggestion.img" class="bigImg">
+                    <img :src="item.img" class="bigImg">
                     <div class="btnRight">
-                        <h2>{{ suggestion.title }}</h2>
+                        <h2>{{ item.title }}</h2>
                         <div class="icons">
                             <img src="../assets/bookmark.png" class="icon">
-                            <div>
-                                <img src="../assets/share.png" class="icon">
-                                <span class="">WEBSITE</span>
-                            </div>
-                            <span class="time">{{ suggestion.time }}</span>
+                            <img src="../assets/share.png" class="icon">
+                            <span class="link">WEBSITE</span>
+                            <img src='../assets/comment.png' class="icon">
+                            <span class="link">COMMENTS</span>
+                            <span class="time">{{ item.time }}</span>
                         </div>
-                        <h3>{{ suggestion.description }}</h3>
+                        <h3>{{ item.description }}</h3>
                     </div>
                 </div>
             </el-button>
@@ -99,6 +99,14 @@ h2 {
     margin-left: 1em
 }
 
+.link {
+    color: #44bc75;
+}
+
+.link:hover {
+    text-decoration: underline
+}
+
 .time {
     margin-left: 1em;
     color: #aaa
@@ -114,10 +122,13 @@ h3 {
 </style>
 
 <script>
-    export default {
-        data() {
-            return {
-                suggestions: [
+import { mapGetters } from 'vuex'
+
+export default {
+    data() {
+        return {
+            followState: "FOLLOW",
+            items: [
                     {
                         img: require("../assets/logo.png"),
                         title: "passage title",
@@ -149,7 +160,15 @@ h3 {
                         description: "the desciption of the passage"
                     }
                 ]
-            }
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'activeItem'
+        ]),
+        website() {
+            return this.activeItem
         }
     }
+}
 </script>

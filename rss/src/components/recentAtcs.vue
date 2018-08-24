@@ -1,22 +1,22 @@
 <template>
     <div>
         <h1>Articles</h1>
-        <div v-for="(suggestion, index) in suggestions" :key="index">
+        <div v-for="(atc, index) in atcs" :key="index">
             <el-button class="articleBtn">
                 <div class="btn">
-                    <img :src="suggestion.img" class="bigImg">
+                    <img :src="atc.img" class="bigImg">
                     <div class="point"></div>
                     <div class="btnRight">
-                        <h2>{{ suggestion.title }}</h2>
+                        <h2>{{ atc.title }}</h2>
                         <div class="icons">
-                            <img src="../assets/bookmark.png" @click="mark(suggestion)">
-                            <div>
+                            <img src="../assets/bookmark.png" @click="mark(atc)">
+                            <div class="website">
                                 <img src="../assets/share.png">
-                                <span class="">WEBSITE</span>
+                                <span class="link">WEBSITE</span>
                             </div>
-                            <span class="time">{{ suggestion.time }}</span>
+                            <span class="time">{{ atc.time }}</span>
                         </div>
-                        <h3>{{ suggestion.description }}</h3>
+                        <h3>{{ atc.description }}</h3>
                     </div>
                 </div>
             </el-button>
@@ -25,7 +25,7 @@
 </template>
 
 <style scoped>
-h1 {
+h1, .btnRight {
     text-align: left
 }
 
@@ -73,10 +73,6 @@ h1 {
     margin-right: 2em
 }
 
-.btnRight {
-    text-align: left
-}
-
 h2 {
     font-weight: 500;
     overflow: hidden;
@@ -89,7 +85,12 @@ h2 {
     margin-bottom: 1em;
     margin-top: 1em;
     display: flex;
-    align-items: center
+    align-items: center;
+    line-height: 1.5em
+}
+
+.website {
+    line-height: 1.5em
 }
 
 img {
@@ -97,6 +98,14 @@ img {
     height: 15px;
     border-radius: 5px;
     margin-left: 1em
+}
+
+.link {
+    color:#44bc75
+}
+
+.link:hover {
+    text-decoration: underline
 }
 
 .time {
@@ -119,55 +128,51 @@ import eventBus from '../router/eventBus.js'
 export default {
     data() {
         return {
-            suggestions: [
+            atcs: [
                 {   
-                    img: require("../assets/logo.png"),
-                    title: "passage title",
-                    time: "POSTED 4 HOURS AGO",
-                    description: "the desciption of the passage",
-                    isMarked: false
+                    img: require("../assets/atcsImg1.jpg"),
+                    title: "passage title1",
+                    time: "POSTED 1 HOURS AGO",
+                    description: "the desciption of the passage1",
+                    id: 1
                 },
                 {
-                    img: require("../assets/logo.png"),
-                    title: "passage title",
-                    time: "POSTED 4 HOURS AGO",
-                    description: "the desciption of the passage",
-                    isMarked: false
+                    img: require("../assets/atcsImg2.jpg"),
+                    title: "passage title2",
+                    time: "POSTED 2 HOURS AGO",
+                    description: "the desciption of the passage2",
+                    id: 2
                 },
                 {
-                    img: require("../assets/logo.png"),
-                    title: "passage title",
-                    time: "POSTED 4 HOURS AGO",
-                    description: "the desciption of the passage",
-                    isMarked: false
+                    img: require("../assets/atcsImg3.jpg"),
+                    title: "passage title3",
+                    time: "POSTED 3 HOURS AGO",
+                    description: "the desciption of the passage3",
+                    id: 3
                 },
                 {
-                    img: require("../assets/logo.png"),
-                    title: "passage title",
+                    img: require("../assets/atcsImg4.jpg"),
+                    title: "passage title4",
                     time: "POSTED 4 HOURS AGO",
-                    description: "the desciption of the passage",
-                    isMarked: false
+                    description: "the desciption of the passage4",
+                    id: 4
                 },
                 {
-                    img: require("../assets/logo.png"),
-                    title: "passage title",
-                    time: "POSTED 4 HOURS AGO",
-                    description: "the desciption of the passage",
-                    isMarked: false
+                    img: require("../assets/atcsImg5.jpg"),
+                    title: "passage title5",
+                    time: "POSTED 5 HOURS AGO",
+                    description: "the desciption of the passage5",
+                    id: 5
                 }
             ]
         }
     },
     methods: {
-        mark(sug) {
-            sug.isMarked = !sug.isMarked;
-            if(sug.isMarked) {
-                let {img, title, time } = sug;
-                var item = { img, title, time };
-                eventBus.$emit('addMark', item);
-            }else {
-                eventBus.$emit('deleteMark')
-            }
+        mark(elem) {
+            let { img, title, time, id } = elem
+            let item = { img, title, time, id }
+            console.log(item)
+            eventBus.$emit('searchMark', item)
         }          
     }
 }

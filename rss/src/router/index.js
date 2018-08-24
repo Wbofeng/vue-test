@@ -8,6 +8,7 @@ import recentAtc from '@/components/recentAtc'
 import feeds from '@/components/feeds'
 import bookmarks from '@/components/bookmarks'
 import suggestions from '@/components/suggestions'
+import test from '@/components/test'
 
 Vue.use(Router)
 
@@ -20,30 +21,35 @@ export default new Router({
     },
     {
       path: '/rss',
+      redirect: '/recentAtcs',
       name: 'rss',
       component: rss,
       children: [
         {
-          path: 'recentAtcs',
+          path: '/recentAtcs',
           component: recentAtcs
         },
         {
-          path: 'recentAtc',
+          path: '/recentAtc/:id',
           component: recentAtc
         },
         {
-          path: 'feeds',
+          path: '/feeds/:id',
           component: feeds
         },
         {
-          path: 'bookmarks',
+          path: '/bookmarks/:id',
           component: bookmarks
         },
         {
-          path: 'suggestions',
+          path: '/suggestions/:id',
           component: suggestions
         }
       ]
+    },
+    {
+      path: '/test',
+      component: test
     }
   ]
 })

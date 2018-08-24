@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="up">
-            <h1>Article Title</h1>   
+            <h1>{{activeItem.title}}</h1>   
             <div class="icons">
                 <img src='../assets/bookmark.png' class="icon">            
                 <img src='../assets/twitter.png' class="icon">            
-                <span>WEBSITE</span>                                   
+                <span class="link">WEBSITE</span>                                   
                 <span class="time">POSTED NUMBER HOURS AGO</span>
             </div>
         </div>
@@ -30,6 +30,14 @@ h1 {
     border-radius: 4px
 }
 
+.link {
+    color:#44bc75
+}
+
+.link:hover {
+    text-decoration: underline
+}
+
 .time {
     margin-left: 1em;
     color: #aaa
@@ -45,37 +53,44 @@ h1 {
 </style>
 
 <script>
-    export default {
-        data () {
-            return {
-                articles: [
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    }
-                ]
-            }
+import { mapGetters } from 'vuex';
+
+export default {
+    data () {
+        return {
+            articles: [
+                {
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage"
+                },
+                {
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage"
+                },
+                {
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage"
+                },
+                {
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage"
+                },
+                {
+                    title: "passage title",
+                    time: "POSTED 4 HOURS AGO",
+                    description: "the desciption of the passage"
+                }
+            ]
         }
-    }    
+    },
+    computed: {
+        ...mapGetters([
+            'activeItem'
+        ])
+    }
+}
 </script>

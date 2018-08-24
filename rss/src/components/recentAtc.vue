@@ -1,19 +1,17 @@
 <template>
     <div>
         <div class="up">
-            <h1>Article Title</h1>   
+            <h1>{{ activeItem.title }}</h1>   
             <div class="icons">
-                <img src='../assets/bookmark.png'>            
-                <img src='../assets/twitter.png'>            
-                <span>WEBSITE</span>                                   
-                <div>
-                    <img src='../assets/comment.png'>
-                    <span>COMMENTS</span>                               
-                </div>
-                <span class="time">POSTED NUMBER HOURS AGO</span>
+                <img src='../assets/bookmark.png' class="bookmark" @click="mark(activeItem)">            
+                <img src='../assets/twitter.png' class="twitter">             
+                <span class="link">WEBSITE</span>                                   
+                <img src='../assets/comment.png' class="comment">
+                <span class="link">COMMENTS</span>                              
+                <span class="time">POSTED {{ activeItem.time }} AGO</span>
             </div>
         </div>
-        <div class="down">passage</div>
+        <div class="down">text</div>
     </div>
 </template>
 
@@ -33,6 +31,23 @@ img {
     border-radius: 4px
 }
 
+.bookmark, .twitter {
+    margin-right: 1em
+}
+
+.comment {
+    margin-left: 1em
+
+}
+
+.link {
+    color:#44bc75
+}
+
+.link:hover {
+    text-decoration: underline
+}
+
 .time {
     margin-left: 1em;
     color: #aaa
@@ -48,37 +63,34 @@ img {
 </style>
 
 <script>
-    export default {
-        data() {
-            return {
-                articles: [
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    },
-                    {
-                        title: "passage title",
-                        time: "POSTED 4 HOURS AGO",
-                        description: "the desciption of the passage"
-                    }
-                ]
+import eventBus from '../router/eventBus.js'
+import { mapGetters } from 'vuex'
+
+export default {
+    data() {
+        return {
+            article: { 
+                title: "title",
+                time: "time"
             }
         }
-    }    
+    },
+    methods: {
+        mark(activeItem) {
+            console.log(activeItem, '===')
+            let elem = {}
+            elem.img = activeItem.img
+            elem.title = activeItem.title
+            elem.time = activeItem.time
+            elem.id = activeItem.id
+            console.log(elem, '=')
+            this.$store.commit('ADD_BOOK', elem)
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'activeItem'
+        ])
+    }
+}
 </script>
