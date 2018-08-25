@@ -122,7 +122,7 @@ export default {
   margin-left: -44px;
   position: relative;
   top: 25px;
-  left: -100px;
+  left: 10px;
 }
 .plink a {
   margin-left: 44px

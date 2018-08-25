@@ -43,21 +43,93 @@
             </h2>
         </div>
         <div class="swiper">
-            <centerswiper></centerswiper>
+            <div class="big_swiper">
+              <contentswiper>
+                <el-carousel-item slot="my" v-for="(bigSwiper,index) in bigSwipers" :key="index">
+                  <a :href="bigSwiper.href">
+                    <img :src="bigSwiper.imgUrl">
+                    <div class="showingBottom">
+                      <div>{{bigSwiper.main}}</div>
+                      <h3>{{bigSwiper.title}}</h3>
+                      <p>{{bigSwiper.p}}</p>
+                    </div>
+                  </a>
+                </el-carousel-item>
+              </contentswiper>
+             </div>
+             <div class="small_swiper">
+              <contentswiper>
+                <el-carousel-item slot="my" v-for="(smallSwiper,index) in smallSwipers" :key="index">
+                  <a :href="smallSwiper.href">
+                    <img :src="smallSwiper.imgUrl">
+                    <div class="showingBottom">
+                      <div>{{smallSwiper.main}}</div>
+                      <h3>{{smallSwiper.title}}</h3>
+                    </div>
+                  </a>
+                </el-carousel-item>
+              </contentswiper>
+             </div>
         </div>
     </div>
 </div>
 </template>
 
 <script>
-import centerswiper from '../components/centerSwiper.vue'
+import contentswiper from '../components/centerSwiper.vue'
 
 export default {
   components: {
-    centerswiper
+    contentswiper
   },
   data () {
     return {
+      bigSwipers: [
+        {
+          href: '#',
+          imgUrl: 'http://www.tsinghua.edu.cn/publish/thu2018/11484/20180719161659602113930/20180719161711405783741.jpg',
+          title: '英国福斯特及合伙人：可持续人居 | 共享的未来',
+          main: '展览',
+          p: '本展览从可持续发展的角度探索由诺曼·福斯特勋爵带领的世界知名建筑设计事务所的工作。在建筑环境中关注“以人为本”体验重要性的同时，分享英国福斯特及合伙人建筑设计事务所从工程研发到工业设计多专业整合的综合式设计手法的经验。'
+        },
+        {
+          href: '#',
+          imgUrl: 'http://www.tsinghua.edu.cn/publish/thu2018/11484/20180718084031656794017/20180718084113147579117.jpg',
+          title: '2018国际迷你古典系列音乐会之五·波兰克拉夫二重奏音乐会',
+          main: '音乐会',
+          p: '著名的斯特拉杂志对“克拉科夫二重奏”写道：“卡利诺夫斯基和兹勒泽二人是自童年以来的朋友，他们之间的关系非常好，他们的演奏更好，可以说为音乐创造了生命。'
+        },
+        {
+          href: '#',
+          imgUrl: 'http://www.tsinghua.edu.cn/publish/thu2018/11484/20180718084031656794017/20180718084819738602592.jpg',
+          title: '材料学院《材料工程名师讲座》：Digital Product...',
+          main: '学术活动',
+          p: 'Digitization of information is indispensable in our today’s life as for example the use of computers and smartphones. Inkjhkhlkjlkjlkjlkjlkjlk'
+        }
+      ],
+      smallSwipers: [
+        {
+          href: '#',
+          imgUrl: 'http://www.tsinghua.edu.cn/publish/thu2018/11484/20180718084031656794017/20180718084113147579117.jpg',
+          title: '2018国际迷你古典系列音乐会之五·波兰克拉夫二重奏音乐会',
+          main: '音乐会',
+          p: '著名的斯特拉杂志对“克拉科夫二重奏”写道：“卡利诺夫斯基和兹勒泽二人是自童年以来的朋友，他们之间的关系非常好，他们的演奏更好，可以说为音乐创造了生命。'
+        },
+        {
+          href: '#',
+          imgUrl: 'http://www.tsinghua.edu.cn/publish/thu2018/11484/20180718084031656794017/20180718084819738602592.jpg',
+          title: '材料学院《材料工程名师讲座》：Digital Product...',
+          main: '学术活动',
+          p: 'Digitization of information is indispensable in our today’s life as for example the use of computers and smartphones. Inkjhkhlkjlkjlkjlkjlkjlk'
+        },
+        {
+          href: '#',
+          imgUrl: 'http://www.tsinghua.edu.cn/publish/thu2018/11484/20180719161659602113930/20180719161711405783741.jpg',
+          title: '英国福斯特及合伙人：可持续人居 | 共享的未来',
+          main: '展览',
+          p: '本展览从可持续发展的角度探索由诺曼·福斯特勋爵带领的世界知名建筑设计事务所的工作。在建筑环境中关注“以人为本”体验重要性的同时，分享英国福斯特及合伙人建筑设计事务所从工程研发到工业设计多专业整合的综合式设计手法的经验。'
+        }
+      ],
       items: [
         {
           href: '#',
@@ -106,8 +178,24 @@ export default {
 }
 </script>
 
-<style scpoed>
+<style>
 /* section2 */
+.small_swiper .showingBottom {
+  font-size: 76%;
+}
+.small_swiper .center_swiper {
+  width: 450px;
+}
+.small_swiper {
+  position: absolute;
+  top: 90px;
+  z-index: 10;
+  right: 20px;
+}
+.big_swiper .center_swiper {
+    width: 900px;
+    padding-left: 210px;
+}
 .focus {
     position: relative;
     margin-left: 160px;
@@ -231,7 +319,7 @@ export default {
     margin-top: -80px;
 }
 .events ul {
-    margin-left:-87px
+    margin-left:-50px
 }
 .events h2 {
     font-size: 36px;
