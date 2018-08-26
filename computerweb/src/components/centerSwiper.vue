@@ -1,30 +1,19 @@
 <template>
   <div class="center_swiper">
     <el-carousel height="673px" @mouseover.native="mouseover" ref="Carsousel" arrow="never" indicator-position="none" class="carousel">
-        <slot name="my"></slot>
+      <el-carousel-item v-for="(Swiper,index) in swipers" :key="index">
+        <a :href="Swiper.href">
+          <img :src="Swiper.imgUrl">
+          <div class="showingBottom">
+            <div>{{Swiper.main}}</div>
+            <h3>{{Swiper.title}}</h3>
+            <p>{{Swiper.p}}</p>
+          </div>
+        </a>
+      </el-carousel-item>
     </el-carousel>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-    }
-  },
-  methods: {
-    mouseover () {
-      console.log(this.$refs.Carsousel)
-      this.$refs.Carsousel.handleMouseEnter = () => {
-        console.log()
-      }
-      this.$refs.Carsousel.handleMouseLeave = () => {
-        console.log()
-      }
-    }
-  }
-}
-</script>
 
 <style>
 .center_swiper h3 {
@@ -62,3 +51,21 @@ export default {
   width: 868px;
 }
 </style>
+
+<script>
+export default {
+  props: [
+    'swipers'
+  ],
+  methods: {
+    mouseover () {
+      this.$refs.Carsousel.handleMouseEnter = () => {
+        console.log()
+      }
+      this.$refs.Carsousel.handleMouseLeave = () => {
+        console.log()
+      }
+    }
+  }
+}
+</script>

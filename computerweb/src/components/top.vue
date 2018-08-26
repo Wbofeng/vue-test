@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import topswiper from '../components/topSwiper.vue'
+import topswiper from './topSwiper.vue'
 
 export default{
   components: {
